@@ -12,8 +12,8 @@ export const metadata = genMeta({
   title: 'OpenAI Agent SDK Development Canada | Custom GPT Chatbots | Solvix Core',
   description: 'Expert OpenAI Agent SDK development in Canada. Custom GPT chatbots, autonomous AI agents, intelligent automation, and OpenAI API integration. Build next-gen AI solutions.',
   keywords: [
-    seoKeywords.canada.aiChatbots.primary,
-    ...seoKeywords.canada.aiChatbots.secondary,
+    seoKeywords.canada.openai.primary,
+    ...seoKeywords.canada.openai.secondary,
     ...seoKeywords.global.aiChatbots.secondary,
     'openai agent sdk canada',
     'gpt-4 development',
