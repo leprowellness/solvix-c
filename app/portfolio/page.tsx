@@ -65,11 +65,8 @@ const PortfolioPage = () => {
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-black leading-none mb-6 font-serif">
-            <span className="block">
-              Our
-              <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent"> Premium</span>
-            </span>
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-none mb-6">
+            <span className="block text-foreground">Our Premium</span>
             <span className="block text-foreground">Portfolio</span>
           </h1>
 
@@ -148,7 +145,7 @@ const PortfolioPage = () => {
                     {/* Content Section */}
                     <div className="p-6 space-y-4">
                       {/* Title */}
-                      <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-2 font-serif">
+                      <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 line-clamp-2">
                         {item.title}
                       </h3>
 
@@ -227,8 +224,8 @@ const PortfolioPage = () => {
             <span className="text-sm font-semibold text-primary">Let's Create Together</span>
           </div>
 
-          <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight font-serif">
-            <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+          <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
+            <span className="block text-foreground">
               Ready to Transform
             </span>
             <span className="block text-foreground">Your Vision?</span>
