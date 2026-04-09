@@ -219,16 +219,8 @@ const PortfolioPage = () => {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-8 backdrop-blur-sm">
-            <Sparkles size={16} className="text-primary" />
-            <span className="text-sm font-semibold text-primary">Let's Create Together</span>
-          </div>
-
-          <h2 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
-            <span className="block text-foreground">
-              Ready to Transform
-            </span>
-            <span className="block text-foreground">Your Vision?</span>
+          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+            Ready to Transform Your Vision?
           </h2>
 
           <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto leading-relaxed mb-10">
