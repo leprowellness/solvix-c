@@ -29,72 +29,82 @@ export default function SplashScreen({ isVisible = true, onComplete }: SplashScr
 
   return (
     <div className="fixed inset-0 z-[9999] bg-background flex items-center justify-center overflow-hidden">
-      {/* Animated Glow Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
-      
-      {/* Animated Glow Circles */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full mix-blend-screen filter blur-3xl animate-glow-pulse" />
-      <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-accent/20 rounded-full mix-blend-screen filter blur-3xl animate-glow-pulse" style={{ animationDelay: '1s' }} />
-      <div className="absolute bottom-1/4 left-1/3 w-96 h-96 bg-primary/15 rounded-full mix-blend-screen filter blur-3xl animate-glow-pulse" style={{ animationDelay: '2s' }} />
+      {/* Ambient Background Lighting */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/4 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/4 rounded-full blur-3xl" />
+      </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center gap-6">
-        {/* Logo with Animated Glow */}
-        <div className="relative">
-          {/* Glow Effect Layer 1 */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/40 to-accent/40 rounded-full blur-3xl animate-glow-pulse" />
+      <div className="relative z-10 flex flex-col items-center justify-center gap-8">
+        {/* Logo with Modern Rotating Ring */}
+        <div className="relative w-40 h-40 flex items-center justify-center">
+          {/* Outer Rotating Ring */}
+          <div className="absolute inset-0 rounded-full border-3 border-transparent border-t-primary border-r-primary/60 animate-spin-slow" />
           
-          {/* Glow Effect Layer 2 */}
-          <div className="absolute inset-0 bg-gradient-to-r from-accent/30 to-primary/30 rounded-full blur-2xl animate-glow-pulse" style={{ animationDelay: '0.5s' }} />
+          {/* Inner Pulsing Ring */}
+          <div className="absolute inset-0 rounded-full border border-primary/20 animate-pulse" />
           
-          {/* Logo Container */}
-          <div className="relative bg-background rounded-full p-6 shadow-2xl shadow-primary/30">
+          {/* Soft Glow */}
+          <div className="absolute inset-6 rounded-full bg-gradient-to-br from-primary/8 to-transparent blur-md animate-fade-pulse" />
+
+          {/* Logo */}
+          <div className="relative z-10">
             <Image
               src="/logo/logo.PNG"
               alt="Solvix Core Logo"
-              width={100}
-              height={100}
-              className="animate-pulse"
+              width={110}
+              height={110}
+              className="drop-shadow-lg"
               priority
             />
           </div>
         </div>
 
         {/* Brand Name with Fade In */}
-        <div className="text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-2 animate-fade-in-up">
+        <div className="text-center space-y-2">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight animate-fade-in-up">
             SOLVIX CORE
           </h1>
-          <p className="text-sm md:text-base text-foreground/60 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-sm md:text-base text-foreground/50 animate-fade-in-up font-medium" style={{ animationDelay: '0.2s' }}>
             Building Your Digital Future
           </p>
         </div>
 
-        {/* Pulsing Dots */}
-        <div className="flex items-center justify-center gap-2 mt-8">
-          <div className="w-2.5 h-2.5 bg-gradient-to-r from-primary to-accent rounded-full animate-pulse" style={{ animationDelay: '0s', boxShadow: '0 0 10px rgba(0, 188, 212, 0.6)' }} />
-          <div className="w-2.5 h-2.5 bg-gradient-to-r from-primary to-accent rounded-full animate-pulse" style={{ animationDelay: '0.3s', boxShadow: '0 0 10px rgba(0, 188, 212, 0.6)' }} />
-          <div className="w-2.5 h-2.5 bg-gradient-to-r from-primary to-accent rounded-full animate-pulse" style={{ animationDelay: '0.6s', boxShadow: '0 0 10px rgba(0, 188, 212, 0.6)' }} />
+        {/* Elegant Loading Indicator */}
+        <div className="flex items-center gap-2 mt-6">
+          <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: '0s' }} />
+          <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: '0.2s' }} />
+          <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: '0.4s' }} />
         </div>
-
-        {/* Loading Text */}
-        <p className="text-xs text-foreground/50 mt-4 animate-pulse">Loading...</p>
       </div>
 
       {/* Styles */}
       <style jsx>{`
-        @keyframes glow-pulse {
-          0%, 100% {
-            opacity: 0.3;
-            transform: scale(1);
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
           }
-          50% {
-            opacity: 0.7;
-            transform: scale(1.1);
+          to {
+            transform: rotate(360deg);
           }
         }
-        .animate-glow-pulse {
-          animation: glow-pulse 4s ease-in-out infinite;
+
+        @keyframes fade-pulse {
+          0%, 100% {
+            opacity: 0.3;
+          }
+          50% {
+            opacity: 0.8;
+          }
+        }
+
+        .animate-spin-slow {
+          animation: spin-slow 3s linear infinite;
+        }
+
+        .animate-fade-pulse {
+          animation: fade-pulse 2.5s ease-in-out infinite;
         }
       `}</style>
     </div>

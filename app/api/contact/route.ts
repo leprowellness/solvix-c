@@ -21,7 +21,8 @@ function isContactData(object: unknown): object is contactObject {
         (typeof obj.budget !== "string" || obj.budget.trim() === "") ||
         (typeof obj.timeline !== "string" || obj.timeline.trim() === "") ||
         (typeof obj.projectStage !== "string" || obj.projectStage.trim() === "") ||
-        (typeof obj.message !== "string" || obj.message.trim() === "")
+        (typeof obj.message !== "string" || obj.message.trim() === "") ||
+        (typeof obj.country !== "string" || obj.country.trim() === "")
     ) {
         return false;
     }
@@ -36,6 +37,18 @@ export async function POST(req: NextRequest) {
         const contactData = await req.json();
 
         if (!isContactData(contactData)) {
+            console.error("❌ Validation failed - missing required fields:", {
+                hasEmail: contactData.email,
+                hasName: contactData.name,
+                hasPhone: contactData.phone,
+                hasService: contactData.service,
+                hasProjectType: contactData.projectType,
+                hasProjectDescription: contactData.projectDescription,
+                hasBudget: contactData.budget,
+                hasTimeline: contactData.timeline,
+                hasProjectStage: contactData.projectStage,
+                hasMessage: contactData.message,
+            });
             return NextResponse.json({
                 success: false,
                 message: "Invalid Contact Data. Please fill all required fields."
@@ -56,7 +69,9 @@ export async function POST(req: NextRequest) {
             technologies,
             teamSize,
             additionalNotes,
-            message 
+            message,
+            country,
+            whatsappNumber
         } = contactData;
 
         // 1. Save to Database
@@ -74,7 +89,9 @@ export async function POST(req: NextRequest) {
             technologies,
             teamSize,
             additionalNotes,
-            message
+            message,
+            country,
+            whatsappNumber
         });
 
         console.log("✅ Contact saved in DB:", newContact._id);
@@ -94,7 +111,9 @@ export async function POST(req: NextRequest) {
             projectStage,
             technologies,
             teamSize,
-            additionalNotes
+            additionalNotes,
+            country,
+            whatsappNumber
         );
         await sendEmail({
             to: process.env.ADMIN_EMAIL || "info@solvixcore.com",
@@ -120,8 +139,22 @@ export async function POST(req: NextRequest) {
     } catch (err: any) {
         console.error("❌ Error in contact API route:", {
             message: err.message,
-            stack: err.stack
+            name: err.name,
+            stack: err.stack,
+            code: err.code,
         });
+
+        // Check for specific validation errors
+        if (err.name === 'ValidationError') {
+            const validationErrors = Object.keys(err.errors).map(key => {
+                return `${key}: ${err.errors[key].message}`;
+            });
+            console.error("📋 Validation errors:", validationErrors);
+            return NextResponse.json({
+                success: false,
+                message: `Validation error: ${validationErrors.join(', ')}`
+            }, { status: 400 });
+        }
 
         return NextResponse.json({
             success: false,

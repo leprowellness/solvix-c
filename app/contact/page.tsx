@@ -3,14 +3,16 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
-import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2, Globe } from 'lucide-react';
 import Image from 'next/image';
 import { toast } from 'sonner';
 import { useLoader } from '@/hooks/use-loader';
 import { FullscreenLoader } from '@/components/loaders';
+import { getCountries, getCurrencySymbol } from '@/lib/countryCurrencyMap';
 
 function ContactForm() {
   const { show: showLoader, hide: hideLoader, isVisible, message, progress } = useLoader();
+  const countries = getCountries();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,10 +28,13 @@ function ContactForm() {
     teamSize: '',
     additionalNotes: '',
     message: '',
+    country: '',
+    whatsappNumber: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [currencySymbol, setCurrencySymbol] = useState('$');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -37,6 +42,11 @@ function ContactForm() {
       ...prev,
       [name]: value,
     }));
+
+    // Update currency symbol when country changes
+    if (name === 'country') {
+      setCurrencySymbol(getCurrencySymbol(value));
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -74,6 +84,8 @@ function ContactForm() {
           teamSize: '',
           additionalNotes: '',
           message: '',
+          country: '',
+          whatsappNumber: '',
         });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
@@ -264,7 +276,47 @@ function ContactForm() {
                   />
                 </div>
               </div>
-            </div>
+
+              {/* Section 2: Country & WhatsApp */}
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-6 pb-3 border-b border-border/30">
+                  Location & Messaging
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-foreground font-semibold mb-2">
+                      Country <span className="text-red-500">*</span>
+                    </label>
+                    <select
+                      name="country"
+                      value={formData.country}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary transition-colors duration-300"
+                    >
+                      <option value="">Select your country</option>
+                      {countries.map((country) => (
+                        <option key={country} value={country}>
+                          {country}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-foreground font-semibold mb-2">
+                      WhatsApp Number (Optional)
+                    </label>
+                    <input
+                      type="tel"
+                      name="whatsappNumber"
+                      value={formData.whatsappNumber}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors duration-300"
+                      placeholder="+1 (437) 889-8265"
+                    />
+                  </div>
+                </div>
+              </div>
 
             {/* Section 2: Project Details */}
             <div>
@@ -410,17 +462,23 @@ function ContactForm() {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
                   <label className="block text-foreground font-semibold mb-2">
-                    Budget <span className="text-red-500">*</span>
+                    Budget <span className="text-primary">{currencySymbol}</span> <span className="text-red-500">*</span>
                   </label>
-                  <input
-                    type="text"
+                  <select
                     name="budget"
                     value={formData.budget}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors duration-300"
-                    placeholder="e.g., $5000, $10k-$25k, Custom amount"
-                  />
+                    className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary transition-colors duration-300"
+                  >
+                    <option value="">Select budget range</option>
+                    <option value={`${currencySymbol || '$'}5k-${currencySymbol || '$'}10k`}>{currencySymbol || '$'}5,000 - {currencySymbol || '$'}10,000</option>
+                    <option value={`${currencySymbol || '$'}10k-${currencySymbol || '$'}25k`}>{currencySymbol || '$'}10,000 - {currencySymbol || '$'}25,000</option>
+                    <option value={`${currencySymbol || '$'}25k-${currencySymbol || '$'}50k`}>{currencySymbol || '$'}25,000 - {currencySymbol || '$'}50,000</option>
+                    <option value={`${currencySymbol || '$'}50k-${currencySymbol || '$'}100k`}>{currencySymbol || '$'}50,000 - {currencySymbol || '$'}100,000</option>
+                    <option value={`${currencySymbol || '$'}100k+`}>{currencySymbol || '$'}100,000+</option>
+                    <option value="Not Sure">Not Sure</option>
+                  </select>
                 </div>
                 <div>
                   <label className="block text-foreground font-semibold mb-2">

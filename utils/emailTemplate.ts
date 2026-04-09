@@ -12,7 +12,9 @@ export const generateEmailTemplate = (
   projectStage?: string,
   technologies?: string,
   teamSize?: string,
-  additionalNotes?: string
+  additionalNotes?: string,
+  country?: string,
+  whatsappNumber?: string
 ) => {
     return `
     <!DOCTYPE html>
@@ -164,14 +166,14 @@ export const generateEmailTemplate = (
           <div class="container">
             <div class="header">
               <h1 class="logo">SOLVIX CORE</h1>
-              <div class="logo-sub">Project Management System</div>
+              <div class="logo-sub">Project Inquiry Management System</div>
             </div>
             
             <div class="content">
               <div class="priority-badge">New Project Inquiry</div>
               <h2 class="greeting">New Project Submission Received</h2>
               <p class="intro-text">
-                You have received a high-priority project inquiry. Review the details below to assess if this aligns with your services and capacity.
+                You have received a new project inquiry. Review the details below to assess alignment with your services and current capacity.
               </p>
 
               <!-- Client Information Section -->
@@ -183,11 +185,19 @@ export const generateEmailTemplate = (
                 </div>
                 <div class="info-row">
                   <span class="label">Email:</span>
-                  <span class="value">${email || 'Not provided'}</span>
+                  <span class="value"><a href="mailto:${email}" style="color: #00bcd4; text-decoration: none;">${email || 'Not provided'}</a></span>
                 </div>
-                ${phone ? `<div class="info-row">
+                <div class="info-row">
                   <span class="label">Phone:</span>
-                  <span class="value">${phone}</span>
+                  <span class="value"><a href="tel:${phone}" style="color: #00bcd4; text-decoration: none;">${phone || 'Not provided'}</a></span>
+                </div>
+                ${whatsappNumber ? `<div class="info-row">
+                  <span class="label">WhatsApp:</span>
+                  <span class="value"><a href="https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}" style="color: #00bcd4; text-decoration: none;">${whatsappNumber}</a></span>
+                </div>` : ''}
+                ${country ? `<div class="info-row">
+                  <span class="label">Country:</span>
+                  <span class="value"><strong>${country}</strong></span>
                 </div>` : ''}
                 ${company ? `<div class="info-row">
                   <span class="label">Company:</span>
@@ -200,7 +210,7 @@ export const generateEmailTemplate = (
                 <div class="section-title">Project Details</div>
                 <div class="info-row">
                   <span class="label">Service:</span>
-                  <span class="value">${service || 'Not specified'}</span>
+                  <span class="value"><strong>${service || 'Not specified'}</strong></span>
                 </div>
                 ${projectType ? `<div class="info-row">
                   <span class="label">Project Type:</span>
@@ -256,7 +266,7 @@ export const generateEmailTemplate = (
 
               <!-- Client Message Section -->
               <div class="section">
-                <div class="section-title">Message from Client</div>
+                <div class="section-title">Client Message</div>
                 <div style="font-size: 13px; color: #333333; line-height: 1.8; white-space: pre-wrap; word-wrap: break-word;">
                   ${message}
                 </div>
@@ -266,25 +276,28 @@ export const generateEmailTemplate = (
 
               <!-- Action Items -->
               <div style="background-color: #e7f3ff; border: 1px solid #b3d9ff; border-radius: 4px; padding: 15px; margin: 20px 0; font-size: 13px; color: #0466c2;">
-                <strong>Next Steps:</strong><br>
-                1. Review project requirements and budget<br>
-                2. Assess team capacity and timeline<br>
+                <strong>Recommended Next Steps:</strong><br>
+                1. Review project requirements and budget alignment<br>
+                2. Assess team availability and timeline feasibility<br>
                 3. Contact client within 24 hours<br>
-                4. Send preliminary proposal
+                4. Send preliminary proposal and timeline
               </div>
             </div>
 
             <div class="footer">
               <div class="footer-text">
-                <strong>Solvix Core Project Inquiry Management</strong>
+                <strong>Solvix Core - Project Management System</strong>
               </div>
               <div class="footer-text">
-                This is an automated high-priority notification. Do not reply to this email.
+                This is an automated system notification. Do not reply to this email.
               </div>
               <div class="contact-info">
-                <strong>You can reply directly to:</strong> ${email}<br>
-                <strong>Or call:</strong> ${phone || 'Not provided'}<br>
-                <strong>Recommended response time:</strong> Within 24 hours<br>
+                <strong>Client Contact Information:</strong><br>
+                Email: <a href="mailto:${email}" style="color: #00bcd4; text-decoration: none;">${email}</a><br>
+                Phone: ${phone || 'Not provided'}<br>
+                ${whatsappNumber ? `WhatsApp: <a href="https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}" style="color: #00bcd4; text-decoration: none;">${whatsappNumber}</a><br>` : ''}
+                Country: ${country || 'Not provided'}<br>
+                <strong>Response Timeframe:</strong> Within 24 hours<br>
                 &copy; ${new Date().getFullYear()} Solvix Core. All rights reserved.
               </div>
             </div>
@@ -302,7 +315,7 @@ export const generateUserConfirmationTemplate = (name: string) => {
       <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Thank You - Solvix Core</title>
+        <title>Inquiry Confirmation - Solvix Core</title>
         <style>
           * {
             margin: 0;
@@ -332,7 +345,7 @@ export const generateUserConfirmationTemplate = (name: string) => {
             padding: 40px 30px;
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             text-align: center;
-            border-bottom: 3px solid #10b981;
+            border-bottom: 3px solid #00bcd4;
           }
           .logo {
             font-size: 28px;
@@ -344,7 +357,7 @@ export const generateUserConfirmationTemplate = (name: string) => {
           }
           .logo-sub {
             font-size: 12px;
-            color: #10b981;
+            color: #00bcd4;
             letter-spacing: 3px;
             margin-top: 5px;
           }
@@ -352,24 +365,31 @@ export const generateUserConfirmationTemplate = (name: string) => {
             padding: 40px;
             text-align: center;
           }
+          .success-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background-color: #d1fae5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+          }
           .greeting {
             font-size: 24px;
             font-weight: 700;
             color: #1e293b;
             margin-bottom: 15px;
           }
-          .checkmark {
-            font-size: 48px;
-            margin-bottom: 20px;
-            display: block;
-          }
           .message-box {
             background-color: #f0fdf4;
-            border: 1px solid #86efac;
-            border-radius: 8px;
+            border-left: 4px solid #10b981;
+            border-radius: 0;
             padding: 20px;
             margin: 25px 0;
             line-height: 1.8;
+            text-align: left;
           }
           .message-box p {
             font-size: 14px;
@@ -385,37 +405,56 @@ export const generateUserConfirmationTemplate = (name: string) => {
           }
           .timeline {
             margin: 30px 0;
-            padding: 20px;
-            background-color: #f9fafb;
-            border-radius: 8px;
+            padding: 0;
+            background-color: transparent;
+            border-radius: 0;
+            text-align: left;
           }
           .timeline-item {
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #e5e7eb;
-            text-align: left;
+            margin-bottom: 20px;
+            padding-bottom: 0;
+            border-bottom: none;
+            display: flex;
+            gap: 15px;
           }
           .timeline-item:last-child {
             margin-bottom: 0;
             padding-bottom: 0;
             border-bottom: none;
           }
-          .timeline-time {
-            font-size: 12px;
+          .timeline-number {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            background-color: #00bcd4;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+          }
+          .timeline-content {
+            flex: 1;
+          }
+          .timeline-title {
+            font-size: 14px;
             font-weight: 600;
-            color: #10b981;
-            text-transform: uppercase;
+            color: #1e293b;
             margin-bottom: 3px;
           }
           .timeline-text {
             font-size: 13px;
             color: #666666;
           }
+          .cta-section {
+            margin: 30px 0;
+          }
           .cta-link {
             display: inline-block;
-            margin-top: 20px;
-            padding: 12px 28px;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
             color: #ffffff;
             text-decoration: none;
             font-weight: 600;
@@ -425,12 +464,22 @@ export const generateUserConfirmationTemplate = (name: string) => {
           }
           .cta-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
           }
           .divider {
             height: 1px;
             background-color: #e5e7eb;
             margin: 20px 0;
+          }
+          .info-section {
+            background-color: #f9fafb;
+            border-radius: 4px;
+            padding: 15px;
+            font-size: 13px;
+            color: #666666;
+            text-align: left;
+            margin: 20px 0;
+            line-height: 1.8;
           }
           .footer {
             padding: 30px 40px;
@@ -444,16 +493,9 @@ export const generateUserConfirmationTemplate = (name: string) => {
             margin-bottom: 8px;
             line-height: 1.6;
           }
-          .social-links {
-            margin: 15px 0;
-          }
-          .social-links a {
-            display: inline-block;
-            margin: 0 8px;
+          .footer-link {
             color: #00bcd4;
             text-decoration: none;
-            font-size: 12px;
-            font-weight: 600;
           }
         </style>
       </head>
@@ -462,63 +504,74 @@ export const generateUserConfirmationTemplate = (name: string) => {
           <div class="container">
             <div class="header">
               <h1 class="logo">SOLVIX CORE</h1>
-              <div class="logo-sub">Thank You for Contacting Us</div>
+              <div class="logo-sub">Inquiry Confirmation</div>
             </div>
 
             <div class="content">
-              <span class="checkmark">✅</span>
+              <div class="success-icon">?</div>
               <h2 class="greeting">Thank You, ${name}!</h2>
               
               <div class="message-box">
-                <p>We've successfully received your message and appreciate you reaching out to Solvix Core.</p>
-                <p>Our team is committed to reviewing your inquiry carefully and will get back to you with a thoughtful response <span class="highlight">within 24 business hours</span>.</p>
+                <p>Your project inquiry has been successfully received by the Solvix Core team.</p>
+                <p>We appreciate your interest and are committed to reviewing your requirements thoroughly. You can expect a <span class="highlight">personalized response within 24 business hours</span>.</p>
               </div>
 
               <div class="divider"></div>
 
+              <h3 style="font-size: 16px; font-weight: 600; color: #1e293b; text-align: left; margin-bottom: 20px;">What Happens Next</h3>
+              
               <div class="timeline">
                 <div class="timeline-item">
-                  <div class="timeline-time">✓ Step 1: Message Received</div>
-                  <div class="timeline-text">Your inquiry has been logged in our system and assigned to the appropriate specialist.</div>
+                  <div class="timeline-number">1</div>
+                  <div class="timeline-content">
+                    <div class="timeline-title">Inquiry Processing</div>
+                    <div class="timeline-text">Your project details are being reviewed by our specialist team to understand your vision and requirements.</div>
+                  </div>
                 </div>
                 <div class="timeline-item">
-                  <div class="timeline-time">⏳ Step 2: Under Review</div>
-                  <div class="timeline-text">Our team is analyzing your request and gathering relevant information to provide you with the best solution.</div>
+                  <div class="timeline-number">2</div>
+                  <div class="timeline-content">
+                    <div class="timeline-title">Analysis & Planning</div>
+                    <div class="timeline-text">We assess project feasibility, timeline, and resource allocation for optimal delivery.</div>
+                  </div>
                 </div>
                 <div class="timeline-item">
-                  <div class="timeline-time">📧 Step 3: Direct Response</div>
-                  <div class="timeline-text">You will receive a personalized email response with detailed information and next steps.</div>
+                  <div class="timeline-number">3</div>
+                  <div class="timeline-content">
+                    <div class="timeline-title">Response & Proposal</div>
+                    <div class="timeline-text">You will receive a detailed response including a preliminary proposal, timeline, and cost estimate.</div>
+                  </div>
                 </div>
               </div>
 
               <div class="divider"></div>
 
-              <p style="font-size: 14px; color: #666666; margin-bottom: 15px;"><strong>In the meantime, feel free to:</strong></p>
-              <a href="https://solvixcore.com" class="cta-link">Visit Our Website</a>
-              
-              <p style="font-size: 12px; color: #999999; margin-top: 20px; line-height: 1.8;">
-                Have questions? You can reply directly to this email or visit our <br>
-                <a href="https://solvixcore.com/contact" style="color: #00bcd4; text-decoration: none;">contact page</a> for additional support options.
-              </p>
+              <div class="cta-section">
+                <p style="font-size: 14px; color: #666666; margin-bottom: 15px;">Explore our latest work and capabilities</p>
+                <a href="https://solvixcore.com/portfolio" class="cta-link">View Our Portfolio</a>
+              </div>
+
+              <div class="info-section">
+                <strong>Important Information:</strong><br>
+                While we can also provide expedited responses for urgent matters, our standard response time is within 24 business hours. If you have any follow-up questions or need to provide additional details, please reply directly to this email.
+              </div>
             </div>
 
             <div class="footer">
               <div class="footer-text">
-                <strong>Solvix Core</strong><br>
-                Premium Tech Solutions & Business Innovation
+                <strong>Solvix Core - Building Digital Solutions</strong><br>
+                Premium Technology Services for Modern Businesses
               </div>
-              <div class="social-links">
-                <a href="#">LinkedIn</a> | 
-                <a href="#">Twitter</a> | 
-                <a href="#">Website</a>
-              </div>
-              <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e5e7eb;">
+              <div style="margin: 15px 0; padding: 15px 0; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb;">
                 <div class="footer-text">
-                  📍 Ottawa, ON, Canada<br>
-                  📧 info@solvixcore.com<br>
-                  🕐 Monday - Friday, 9 AM - 6 PM EST<br>
-                  &copy; ${new Date().getFullYear()} Solvix Core. All rights reserved.
+                  Contact: info@solvixcore.com<br>
+                  Business Hours: Monday - Friday, 9 AM - 6 PM EST<br>
+                  Location: Ottawa, Ontario, Canada
                 </div>
+              </div>
+              <div class="footer-text" style="margin-top: 15px;">
+                &copy; ${new Date().getFullYear()} Solvix Core. All rights reserved.<br>
+                <a href="https://solvixcore.com" class="footer-link">Visit Our Website</a>
               </div>
             </div>
           </div>

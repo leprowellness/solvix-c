@@ -16,31 +16,35 @@ export default function FullscreenLoader({
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-background/95 backdrop-blur-sm flex items-center justify-center">
-      {/* Animated Pulsing Background */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-accent/30 animate-pulse-slow" />
+    <div className="fixed inset-0 z-[9999] bg-background/98 backdrop-blur-sm flex items-center justify-center">
+      {/* Ambient Light Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tl from-primary/5 to-transparent rounded-full blur-3xl" />
       </div>
 
       {/* Content Container */}
       <div className="relative z-10 flex flex-col items-center justify-center gap-8 max-w-md mx-4">
-        {/* Logo Section with Pulsing Glow */}
-        <div className="relative">
-          {/* Pulsing Glow Layers */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/40 to-accent/40 animate-pulse-glow" />
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-accent/30 to-primary/30 animate-pulse-glow" style={{ animationDelay: '0.5s' }} />
+        {/* Logo Section with Advanced Animation */}
+        <div className="relative w-40 h-40 flex items-center justify-center">
+          {/* Rotating Glow Ring */}
+          <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-primary border-r-primary/60 animate-spin-slow opacity-80" />
+          
+          {/* Pulsing Outer Ring */}
+          <div className="absolute inset-0 rounded-full border border-primary/20 animate-pulse" />
+          
+          {/* Soft Inner Glow */}
+          <div className="absolute inset-6 rounded-full bg-gradient-to-br from-primary/10 to-transparent blur-lg animate-fade-pulse" />
 
-          {/* Inner Ring */}
-          <div className="absolute -inset-1 rounded-full border border-primary/40 animate-pulse-border" />
-
-          {/* Logo */}
-          <div className="relative z-10 bg-background rounded-full p-6">
+          {/* Logo Container with Transparent Background */}
+          <div className="relative z-10">
             <Image
               src="/logo/logo.PNG"
               alt="Loading"
               width={100}
               height={100}
-              className="animate-pulse"
+              className="drop-shadow-lg"
+              priority
             />
           </div>
         </div>
@@ -78,58 +82,30 @@ export default function FullscreenLoader({
       </div>
 
       <style jsx>{`
-        @keyframes pulse-glow {
-          0%, 100% {
-            opacity: 0.3;
-            transform: scale(1);
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
           }
-          50% {
-            opacity: 0.8;
-            transform: scale(1.15);
+          to {
+            transform: rotate(360deg);
           }
         }
         
-        @keyframes pulse-border {
-          0%, 100% {
-            opacity: 0.3;
-            box-shadow: 0 0 0 0 rgba(0, 188, 212, 0);
-          }
-          50% {
-            opacity: 1;
-            box-shadow: 0 0 15px 5px rgba(0, 188, 212, 0.4);
-          }
-        }
-        
-        @keyframes pulse-dot {
-          0%, 100% {
-            transform: scale(1);
-            opacity: 0.5;
-          }
-          50% {
-            transform: scale(1.4);
-            opacity: 1;
-          }
-        }
-        
-        @keyframes pulse-slow {
+        @keyframes fade-pulse {
           0%, 100% {
             opacity: 0.3;
           }
           50% {
-            opacity: 0.6;
+            opacity: 0.7;
           }
         }
         
-        .animate-pulse-glow {
-          animation: pulse-glow 3s ease-in-out infinite;
+        .animate-spin-slow {
+          animation: spin-slow 3s linear infinite;
         }
         
-        .animate-pulse-border {
-          animation: pulse-border 2.5s ease-in-out infinite;
-        }
-        
-        .animate-pulse-dot {
-          animation: pulse-dot 1.4s ease-in-out infinite;
+        .animate-fade-pulse {
+          animation: fade-pulse 2.5s ease-in-out infinite;
         }
       `}</style>
     </div>

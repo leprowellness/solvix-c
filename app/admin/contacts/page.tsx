@@ -14,6 +14,16 @@ interface Contact {
   service: string;
   message: string;
   company?: string;
+  projectType: string;
+  projectDescription: string;
+  budget: string;
+  timeline: string;
+  projectStage: string;
+  technologies?: string;
+  teamSize?: string;
+  additionalNotes?: string;
+  country: string;
+  whatsappNumber?: string;
   createdAt: string;
 }
 
@@ -182,6 +192,80 @@ const AdminContactsPage = () => {
                       <p className="text-cyan-400 font-semibold">{selectedContact.service}</p>
                     </div>
                   </div>
+
+                  {/* Location Information */}
+                  <div className="grid grid-cols-2 gap-4 mb-8 pb-6 border-b border-cyan-400/10">
+                    <div>
+                      <p className="text-xs text-foreground/50 mb-1">Country</p>
+                      <p className="text-foreground font-semibold">{selectedContact.country}</p>
+                    </div>
+                    {selectedContact.whatsappNumber && (
+                      <div>
+                        <p className="text-xs text-foreground/50 mb-1">WhatsApp</p>
+                        <a
+                          href={`https://wa.me/${selectedContact.whatsappNumber.replace(/[^0-9]/g, '')}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-cyan-400 hover:text-cyan-300 transition-colors"
+                        >
+                          {selectedContact.whatsappNumber}
+                        </a>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Project Details */}
+                  <div className="mb-8 pb-6 border-b border-cyan-400/10">
+                    <h3 className="text-sm font-bold text-foreground mb-4">Project Details</h3>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-xs text-foreground/50 mb-1">Project Type</p>
+                        <p className="text-foreground">{selectedContact.projectType}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs text-foreground/50 mb-1">Project Stage</p>
+                        <p className="text-foreground">{selectedContact.projectStage}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs text-foreground/50 mb-1">Budget</p>
+                        <p className="text-cyan-400 font-semibold">{selectedContact.budget}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs text-foreground/50 mb-1">Timeline</p>
+                        <p className="text-foreground">{selectedContact.timeline}</p>
+                      </div>
+                      {selectedContact.technologies && (
+                        <div className="col-span-2">
+                          <p className="text-xs text-foreground/50 mb-1">Technologies</p>
+                          <p className="text-foreground">{selectedContact.technologies}</p>
+                        </div>
+                      )}
+                      {selectedContact.teamSize && (
+                        <div>
+                          <p className="text-xs text-foreground/50 mb-1">Team Size</p>
+                          <p className="text-foreground">{selectedContact.teamSize}</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Project Description */}
+                  <div className="mb-8 pb-6 border-b border-cyan-400/10">
+                    <p className="text-sm font-semibold text-foreground mb-3">Project Description</p>
+                    <p className="text-foreground/80 leading-relaxed p-4 bg-background/40 rounded-lg border border-cyan-400/10">
+                      {selectedContact.projectDescription}
+                    </p>
+                  </div>
+
+                  {/* Additional Notes */}
+                  {selectedContact.additionalNotes && (
+                    <div className="mb-8 pb-6 border-b border-cyan-400/10">
+                      <p className="text-sm font-semibold text-foreground mb-3">Additional Notes</p>
+                      <p className="text-foreground/80 leading-relaxed p-4 bg-background/40 rounded-lg border border-cyan-400/10">
+                        {selectedContact.additionalNotes}
+                      </p>
+                    </div>
+                  )}
 
                   {/* Message */}
                   <div className="mb-8">

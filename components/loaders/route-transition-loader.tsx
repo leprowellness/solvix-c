@@ -17,58 +17,59 @@ export default function RouteTransitionLoader({ show = false }: RouteTransitionL
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-[9997] bg-background/90 backdrop-blur-md flex items-center justify-center pointer-events-none">
-      {/* Neon Glow Background */}
+    <div className="fixed inset-0 z-[9997] bg-background/95 backdrop-blur-md flex items-center justify-center pointer-events-none">
+      {/* Subtle Background Lighting */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-transparent to-accent/20" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-neon-glow" />
+        <div className="absolute inset-0" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-6">
-        {/* Logo with Neon Glow */}
-        <div className="relative">
-          {/* Neon Ring */}
-          <div className="absolute inset-0 rounded-full border-2 border-primary/50 blur-sm animate-neon-pulse" style={{ boxShadow: '0 0 20px rgba(0, 188, 212, 0.8)' }} />
+        {/* Logo with Modern Rotating Ring */}
+        <div className="relative w-32 h-32 flex items-center justify-center">
+          {/* Rotating Border */}
+          <div className="absolute inset-0 rounded-full border-2 border-transparent border-t-primary border-r-primary/60 animate-spin-slow" />
           
-          {/* Inner Glow */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/40 to-accent/40 rounded-full blur-lg animate-neon-pulse" style={{ animationDelay: '0.5s' }} />
+          {/* Pulsing Inner Ring */}
+          <div className="absolute inset-0 rounded-full border border-primary/20 animate-pulse" />
+          
+          {/* Soft Glow */}
+          <div className="absolute inset-4 rounded-full bg-gradient-to-br from-primary/6 to-transparent blur-md animate-fade-pulse" />
           
           {/* Logo */}
           <Image
             src="/logo/logo.PNG"
             alt="Route Transition"
-            width={80}
-            height={80}
-            className="animate-pulse"
-            style={{ filter: 'drop-shadow(0 0 10px rgba(0, 188, 212, 0.8))' }}
+            width={85}
+            height={85}
+            className="drop-shadow-md"
+            priority
           />
         </div>
 
-        {/* Neon Bars */}
-        <div className="flex gap-3">
-          <div className="w-1 h-8 bg-gradient-to-b from-primary to-accent rounded-full animate-neon-bar" style={{ boxShadow: '0 0 10px rgba(0, 188, 212, 0.8)', animationDelay: '0s' }} />
-          <div className="w-1 h-8 bg-gradient-to-b from-accent to-primary rounded-full animate-neon-bar" style={{ boxShadow: '0 0 10px rgba(0, 188, 212, 0.8)', animationDelay: '0.2s' }} />
-          <div className="w-1 h-8 bg-gradient-to-b from-primary to-accent rounded-full animate-neon-bar" style={{ boxShadow: '0 0 10px rgba(0, 188, 212, 0.8)', animationDelay: '0.4s' }} />
+        {/* Loading Indicator */}
+        <div className="flex gap-2">
+          <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: '0s' }} />
+          <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: '0.2s' }} />
+          <div className="w-2 h-2 rounded-full bg-primary animate-pulse" style={{ animationDelay: '0.4s' }} />
         </div>
 
         {/* Loading Text */}
-        <p className="text-sm text-foreground/60 font-medium tracking-wider">Navigating...</p>
+        <p className="text-sm text-foreground/50 font-medium tracking-wide">Navigating...</p>
       </div>
 
       <style jsx>{`
-        @keyframes neon-glow {
-          0%, 100% {
-            opacity: 0.3;
-            transform: scale(1);
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
           }
-          50% {
-            opacity: 0.7;
-            transform: scale(1.2);
+          to {
+            transform: rotate(360deg);
           }
         }
-        
-        @keyframes neon-pulse {
+
+        @keyframes fade-pulse {
           0%, 100% {
             opacity: 0.3;
           }
@@ -77,27 +78,12 @@ export default function RouteTransitionLoader({ show = false }: RouteTransitionL
           }
         }
         
-        @keyframes neon-bar {
-          0%, 100% {
-            transform: scaleY(0.5);
-            opacity: 0.4;
-          }
-          50% {
-            transform: scaleY(1);
-            opacity: 1;
-          }
+        .animate-spin-slow {
+          animation: spin-slow 2.5s linear infinite;
         }
-        
-        .animate-neon-glow {
-          animation: neon-glow 3s ease-in-out infinite;
-        }
-        
-        .animate-neon-pulse {
-          animation: neon-pulse 2s ease-in-out infinite;
-        }
-        
-        .animate-neon-bar {
-          animation: neon-bar 0.8s ease-in-out infinite;
+
+        .animate-fade-pulse {
+          animation: fade-pulse 2.5s ease-in-out infinite;
         }
       `}</style>
     </div>

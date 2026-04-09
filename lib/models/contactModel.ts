@@ -15,6 +15,8 @@ export interface contactObject {
     teamSize?: string,
     additionalNotes?: string,
     message: string,
+    country: string,
+    whatsappNumber?: string,
 }
 
 const contactSchema = new mongoose.Schema({
@@ -23,6 +25,8 @@ const contactSchema = new mongoose.Schema({
     email: { type: String, required: true, trim: true, lowercase: true },
     phone: { type: String, required: true, trim: true },
     company: { type: String, trim: true },
+    country: { type: String, required: true, trim: true },
+    whatsappNumber: { type: String, trim: true },
     
     // Service & Project Details
     service: { type: String, required: true, trim: true },
@@ -30,7 +34,7 @@ const contactSchema = new mongoose.Schema({
     projectDescription: { type: String, required: true, trim: true },
     
     // Project Scope
-    budget: { type: String, required: true, enum: ['$5k-$10k', '$10k-$25k', '$25k-$50k', '$50k-$100k', '$100k+', 'Not Sure'], trim: true },
+    budget: { type: String, required: true, trim: true },
     timeline: { type: String, required: true, enum: ['ASAP (1-2 weeks)', 'Soon (1 month)', 'Flexible (2-3 months)', '3-6 months', '6+ months', 'Not Sure'], trim: true },
     projectStage: { type: String, required: true, enum: ['Idea Phase', 'Early Stage', 'MVP Ready', 'Scaling', 'Other'], trim: true },
     
