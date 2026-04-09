@@ -110,10 +110,10 @@ export function AdminPortfolioFormContent() {
         return;
       }
 
-      // Validate file size (5MB)
-      const maxSize = 5 * 1024 * 1024;
+      // Validate file size (2MB for production compatibility)
+      const maxSize = 2 * 1024 * 1024;
       if (file.size > maxSize) {
-        toast.error('File size must be less than 5MB');
+        toast.error('File size must be less than 2MB');
         return;
       }
 
