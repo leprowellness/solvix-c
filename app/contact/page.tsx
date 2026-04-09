@@ -317,8 +317,9 @@ function ContactForm() {
                   </div>
                 </div>
               </div>
+            </div>
 
-            {/* Section 2: Project Details */}
+            {/* Section 3: Project Details */}
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-6 pb-3 border-b border-border/30">
                 Project Details
