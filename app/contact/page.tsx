@@ -465,21 +465,20 @@ function ContactForm() {
                   <label className="block text-foreground font-semibold mb-2">
                     Budget <span className="text-primary">{currencySymbol}</span> <span className="text-red-500">*</span>
                   </label>
-                  <select
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-secondary border border-border rounded-lg text-foreground focus:outline-none focus:border-primary transition-colors duration-300"
-                  >
-                    <option value="">Select budget range</option>
-                    <option value={`${currencySymbol || '$'}5k-${currencySymbol || '$'}10k`}>{currencySymbol || '$'}5,000 - {currencySymbol || '$'}10,000</option>
-                    <option value={`${currencySymbol || '$'}10k-${currencySymbol || '$'}25k`}>{currencySymbol || '$'}10,000 - {currencySymbol || '$'}25,000</option>
-                    <option value={`${currencySymbol || '$'}25k-${currencySymbol || '$'}50k`}>{currencySymbol || '$'}25,000 - {currencySymbol || '$'}50,000</option>
-                    <option value={`${currencySymbol || '$'}50k-${currencySymbol || '$'}100k`}>{currencySymbol || '$'}50,000 - {currencySymbol || '$'}100,000</option>
-                    <option value={`${currencySymbol || '$'}100k+`}>{currencySymbol || '$'}100,000+</option>
-                    <option value="Not Sure">Not Sure</option>
-                  </select>
+                  <div className="relative">
+                    <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-foreground font-semibold text-lg pointer-events-none">
+                      {currencySymbol}
+                    </span>
+                    <input
+                      type="text"
+                      name="budget"
+                      value={formData.budget}
+                      onChange={handleChange}
+                      required
+                      className="w-full pl-8 pr-4 py-3 bg-secondary border border-border rounded-lg text-foreground placeholder-foreground/50 focus:outline-none focus:border-primary transition-colors duration-300"
+                      placeholder="Enter your budget (e.g., 5000, 50000)"
+                    />
+                  </div>
                 </div>
                 <div>
                   <label className="block text-foreground font-semibold mb-2">
