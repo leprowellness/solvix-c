@@ -77,7 +77,7 @@ export default function CountrySelector() {
   const { selectedCountry, setSelectedCountry } = useCurrency();
 
   useEffect(() => {
-    // Show modal on first visit after a delay (to allow splash screen to finish)
+    // Show modal on first visit only (after splash screen)
     const hasSelectedCountry = localStorage.getItem('selectedCountry');
     if (!hasSelectedCountry) {
       const timer = setTimeout(() => {
@@ -210,44 +210,44 @@ export default function CountrySelector() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-gradient-to-br from-gray-900 to-gray-800 border border-purple-500/30 rounded-2xl p-6 md:p-8 max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col"
+              className="bg-gradient-to-br from-gray-900 to-gray-800 border border-purple-500/30 rounded-2xl p-4 sm:p-6 md:p-8 max-w-4xl w-full max-h-[85vh] sm:max-h-[90vh] overflow-hidden shadow-2xl flex flex-col"
             >
-              <div className="text-center mb-6">
+              <div className="text-center mb-4 sm:mb-6">
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                  className="inline-block mb-4"
+                  className="inline-block mb-3 sm:mb-4"
                 >
-                  <Globe className="w-16 h-16 text-purple-500" />
+                  <Globe className="w-12 h-12 sm:w-16 sm:h-16 text-purple-500" />
                 </motion.div>
-                <h2 className="text-3xl font-bold text-white mb-2">Select Your Country</h2>
-                <p className="text-gray-400">Choose your location to see prices in your local currency</p>
+                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">Select Your Country</h2>
+                <p className="text-sm sm:text-base text-gray-400">Choose your location to see prices in your local currency</p>
               </div>
 
               {/* Search bar in modal */}
-              <div className="mb-4">
+              <div className="mb-3 sm:mb-4">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
                   <input
                     type="text"
                     placeholder="Search country or currency..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-12 pr-10 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
+                    className="w-full pl-10 sm:pl-12 pr-10 py-2.5 sm:py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-sm sm:text-base text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
                   />
                   {searchQuery && (
                     <button
                       onClick={() => setSearchQuery('')}
                       className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
                     >
-                      <X className="w-5 h-5" />
+                      <X className="w-4 h-4 sm:w-5 sm:h-5" />
                     </button>
                   )}
                 </div>
               </div>
 
               {/* Countries grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 overflow-y-auto flex-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 overflow-y-auto flex-1">
                 {filteredCountries.length > 0 ? (
                   filteredCountries.map((country) => (
                     <motion.button
@@ -255,17 +255,17 @@ export default function CountrySelector() {
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       onClick={() => handleCountrySelect(country)}
-                      className="flex items-center gap-3 p-3 bg-gray-800/50 hover:bg-gray-700/50 border border-gray-700 hover:border-purple-500 rounded-lg transition-all text-left"
+                      className="flex items-center gap-2 sm:gap-3 p-2.5 sm:p-3 bg-gray-800/50 hover:bg-gray-700/50 border border-gray-700 hover:border-purple-500 rounded-lg transition-all text-left"
                     >
-                      <span className="text-3xl">{country.flag}</span>
+                      <span className="text-2xl sm:text-3xl">{country.flag}</span>
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-white truncate">{country.name}</p>
+                        <p className="text-xs sm:text-sm font-medium text-white truncate">{country.name}</p>
                         <p className="text-xs text-gray-400">{country.symbol} {country.currency}</p>
                       </div>
                     </motion.button>
                   ))
                 ) : (
-                  <div className="col-span-full py-12 text-center text-gray-500">
+                  <div className="col-span-full py-8 sm:py-12 text-center text-gray-500 text-sm sm:text-base">
                     No countries found matching "{searchQuery}"
                   </div>
                 )}

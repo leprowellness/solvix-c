@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import { Mail, Phone, MapPin, Send, Loader2, CheckCircle2, Globe } from 'lucide-react';
@@ -9,9 +9,11 @@ import { toast } from 'sonner';
 import { useLoader } from '@/hooks/use-loader';
 import { FullscreenLoader } from '@/components/loaders';
 import { getCountries, getCurrencySymbol } from '@/lib/countryCurrencyMap';
+import { useCurrency } from '@/contexts/currency-context';
 
 function ContactForm() {
   const { show: showLoader, hide: hideLoader, isVisible, message, progress } = useLoader();
+  const { selectedCountry } = useCurrency();
   const countries = getCountries();
   const [formData, setFormData] = useState({
     name: '',
@@ -35,6 +37,17 @@ function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [currencySymbol, setCurrencySymbol] = useState('$');
+
+  // Auto-fill country from currency context
+  useEffect(() => {
+    if (selectedCountry && selectedCountry.name) {
+      setFormData((prev) => ({
+        ...prev,
+        country: selectedCountry.name,
+      }));
+      setCurrencySymbol(selectedCountry.symbol);
+    }
+  }, [selectedCountry]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
