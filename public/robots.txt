@@ -1,0 +1,28 @@
+# Robots.txt for Solvix Core
+# Optimize crawling and indexing for search engines
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.next/
+Disallow: /api/
+Disallow: *?*sort=
+Crawl-delay: 1
+
+# Google Search  
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /.next/
+Crawl-delay: 0.5
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /.next/
+Crawl-delay: 1
+
+# Sitemap locations
+Sitemap: https://solvixcore.com/sitemap.xml
+Sitemap: https://solvixcore.com/sitemap-0.xml
