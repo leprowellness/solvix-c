@@ -146,7 +146,6 @@ import { Toaster } from "sonner"
 import { Preloader } from "@/components/loaders"
 import RootClientWrapper from "@/components/root-client-wrapper"
 import { VercelAnalytics } from "@/components/analytics"
-import CurrencyDebug from "@/components/currency-debug"
 
 export default function RootLayout({
   children,
@@ -174,7 +173,6 @@ export default function RootLayout({
             <RootClientWrapper>
               {children}
             </RootClientWrapper>
-            <CurrencyDebug />
           </CurrencyProvider>
           <Toaster position="bottom-right" richColors />
           <VercelAnalytics />
