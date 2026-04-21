@@ -38,6 +38,23 @@ function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [currencySymbol, setCurrencySymbol] = useState('$');
 
+  // Auto-fill service from URL parameters
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const serviceParam = params.get('service');
+    const planParam = params.get('plan');
+    const priceParam = params.get('price');
+
+    if (serviceParam) {
+      setFormData((prev) => ({
+        ...prev,
+        service: serviceParam,
+        projectType: planParam || '',
+        budget: priceParam || '',
+      }));
+    }
+  }, []);
+
   // Auto-fill country from currency context
   useEffect(() => {
     if (selectedCountry && selectedCountry.name) {

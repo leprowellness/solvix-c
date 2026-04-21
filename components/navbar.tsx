@@ -150,6 +150,14 @@ const Navbar = () => {
           </div>
 
           <div className="pt-6 mt-auto border-t border-border/40 space-y-4">
+            {/* Country Selector in Mobile Menu */}
+            <div className="pb-4">
+              <p className="text-[clamp(0.7rem,2.5vw,0.8rem)] font-bold uppercase tracking-[0.2em] text-foreground/30 mb-3">
+                Select Country
+              </p>
+              <CountrySelector />
+            </div>
+            
             <p className="text-[clamp(0.7rem,2.5vw,0.8rem)] font-bold uppercase tracking-[0.2em] text-foreground/30">
               Follow Us
             </p>

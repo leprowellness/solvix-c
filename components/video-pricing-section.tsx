@@ -1,12 +1,16 @@
 'use client';
 
 import { Check } from 'lucide-react';
+import { useCurrency } from '@/contexts/currency-context';
 
 export default function VideoPricingSection() {
+  const { convertPrice, selectedCountry } = useCurrency();
+
   const plans = [
     {
       name: 'Video Editing',
-      price: '$750/month',
+      price: 750,
+      priceType: 'monthly',
       subtitle: '10 high-quality short videos (up to 30 seconds each)',
       features: [
         'Optimized for Instagram Reels, TikTok, YouTube Shorts',
@@ -19,7 +23,8 @@ export default function VideoPricingSection() {
     },
     {
       name: 'Advanced Editing',
-      price: '$188 – $900/video',
+      priceRange: { min: 188, max: 900 },
+      priceType: 'per video',
       subtitle: '(Upto 5 mins video)',
       description: 'Videos up to 5 minutes',
       features: [
@@ -46,20 +51,20 @@ export default function VideoPricingSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Video Editing Pricing
           </h2>
-          <p className="text-foreground/70 text-lg max-w-2xl mx-auto mb-8">
+          <p className="text-foreground/70 text-lg max-w-2xl mx-auto">
             Professional video editing services to elevate your content and engage your audience
           </p>
-          <p className="text-primary font-semibold text-sm mb-8">All prices in CAD (Canadian Dollars)</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <div
-              key={index}
-              className={`bg-card border rounded-xl p-8 transition-all duration-300 hover:shadow-xl animate-scale-in relative ${plan.popular
+              key={`${plan.name}-${selectedCountry.code}`}
+              className={`bg-card border rounded-xl p-8 transition-all duration-300 hover:shadow-xl animate-scale-in relative ${
+                plan.popular
                   ? 'border-primary shadow-lg shadow-primary/20 md:scale-105'
                   : 'border-border hover:border-primary/50'
-                }`}
+              }`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {plan.popular && (
@@ -72,7 +77,13 @@ export default function VideoPricingSection() {
                 <h3 className="text-2xl font-bold text-foreground mb-4">{plan.name}</h3>
                 <div className="mb-3">
                   <span className="text-4xl font-bold text-foreground">
-                    {plan.price}
+                    {plan.priceRange 
+                      ? `${convertPrice(plan.priceRange.min)} – ${convertPrice(plan.priceRange.max)}`
+                      : convertPrice(plan.price!)
+                    }
+                  </span>
+                  <span className="text-lg text-foreground/60 ml-2">
+                    /{plan.priceType}
                   </span>
                 </div>
                 <p className="text-sm text-foreground/70 font-medium mb-2">{plan.subtitle}</p>
@@ -93,11 +104,12 @@ export default function VideoPricingSection() {
               </div>
 
               <a
-                href={`/contact?service=video&plan=${encodeURIComponent(plan.name)}&price=${encodeURIComponent(plan.price)}`}
-                className={`block w-full text-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${plan.popular
+                href={`/contact?service=video&plan=${encodeURIComponent(plan.name)}`}
+                className={`block w-full text-center px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+                  plan.popular
                     ? 'bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl hover:shadow-primary/50'
                     : 'bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30'
-                  }`}
+                }`}
               >
                 Get Started
               </a>
