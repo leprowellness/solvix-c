@@ -1,13 +1,54 @@
 import { Metadata } from 'next';
+import { generateMetadata as genMeta, generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo-utils';
 import POSPricingSection from '@/components/pos-pricing-section';
 import { Store, BarChart3, Users, CreditCard, Package, Shield } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Point of Sale Solutions | Solvix Core',
-  description: 'Complete POS systems for retail and hospitality businesses. Streamline operations with our advanced point of sale solutions.',
-};
+export const metadata = genMeta({
+  title: 'Point of Sale (POS) Solutions Canada | Retail & Hospitality Systems | Solvix Core',
+  description: 'Advanced POS systems for retail and hospitality businesses in Canada. Multi-store management, inventory tracking, payment processing, and customer analytics. Streamline operations with our POS solutions.',
+  keywords: [
+    'pos system canada',
+    'point of sale software',
+    'retail pos system',
+    'hospitality pos solution',
+    'pos software canada',
+    'multi-store pos system',
+    'payment processing pos',
+    'inventory management pos',
+    'restaurant pos system',
+    'retail management software',
+    'pos system development'
+  ],
+  canonical: 'https://www.solvixcore.com/services/pos'
+});
 
 export default function POSPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://www.solvixcore.com' },
+    { name: 'Services', url: 'https://www.solvixcore.com/services' },
+    { name: 'POS Solutions', url: 'https://www.solvixcore.com/services/pos' }
+  ]);
+
+  const serviceSchema = generateServiceSchema({
+    name: 'Point of Sale (POS) Systems & Solutions',
+    description: 'Professional POS system development, multi-store management, inventory tracking, and payment processing for retail and hospitality businesses',
+    url: 'https://www.solvixcore.com/services/pos'
+  });
+
+  const faqSchema = generateFAQSchema([
+    {
+      question: 'What is a Point of Sale (POS) system?',
+      answer: 'A POS system is software and hardware that processes sales transactions, manages inventory, tracks customer data, and generates business analytics for retail and hospitality businesses.'
+    },
+    {
+      question: 'Can your POS system handle multiple store locations?',
+      answer: 'Yes, our POS systems support multi-store management with real-time synchronization of inventory, sales data, and reporting across all locations from a single dashboard.'
+    },
+    {
+      question: 'What payment methods does your POS system accept?',
+      answer: 'Our POS systems accept all major payment methods including credit cards, debit cards, mobile payments, contactless payments, cash, and gift cards.'
+    }
+  ]);
   const features = [
     {
       icon: Store,

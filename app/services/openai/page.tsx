@@ -21,20 +21,20 @@ export const metadata = genMeta({
     'autonomous ai agents',
     'custom gpt solutions canada'
   ],
-  canonical: 'https://solvixcore.com/services/openai'
+  canonical: 'https://www.solvixcore.com/services/openai'
 });
 
 export default function OpenAIService() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://solvixcore.com' },
-    { name: 'Services', url: 'https://solvixcore.com/services' },
-    { name: 'OpenAI Agent SDK', url: 'https://solvixcore.com/services/openai' }
+    { name: 'Home', url: 'https://www.solvixcore.com' },
+    { name: 'Services', url: 'https://www.solvixcore.com/services' },
+    { name: 'OpenAI Agent SDK', url: 'https://www.solvixcore.com/services/openai' }
   ]);
 
   const serviceSchema = generateServiceSchema({
     name: 'OpenAI Agent SDK Development Services',
     description: 'Custom OpenAI agent development, GPT chatbots, autonomous AI systems, and intelligent automation for Canadian businesses',
-    url: 'https://solvixcore.com/services/openai'
+    url: 'https://www.solvixcore.com/services/openai'
   });
 
   const faqSchema = generateFAQSchema([

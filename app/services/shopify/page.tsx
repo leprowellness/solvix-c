@@ -22,20 +22,20 @@ export const metadata = genMeta({
     'shopify app integration',
     'ecommerce optimization'
   ],
-  canonical: 'https://solvixcore.com/services/shopify'
+  canonical: 'https://www.solvixcore.com/services/shopify'
 });
 
 export default function ShopifyService() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://solvixcore.com' },
-    { name: 'Services', url: 'https://solvixcore.com/services' },
-    { name: 'Shopify Store Design', url: 'https://solvixcore.com/services/shopify' }
+    { name: 'Home', url: 'https://www.solvixcore.com' },
+    { name: 'Services', url: 'https://www.solvixcore.com/services' },
+    { name: 'Shopify Store Design', url: 'https://www.solvixcore.com/services/shopify' }
   ]);
 
   const serviceSchema = generateServiceSchema({
     name: 'Shopify Store Development & Design Services',
     description: 'Professional Shopify store setup, custom theme development, e-commerce optimization, and ongoing support for Canadian businesses',
-    url: 'https://solvixcore.com/services/shopify'
+    url: 'https://www.solvixcore.com/services/shopify'
   });
 
   const faqSchema = generateFAQSchema([

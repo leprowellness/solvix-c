@@ -21,20 +21,20 @@ export const metadata = genMeta({
     'api integration services',
     'n8n consulting canada'
   ],
-  canonical: 'https://solvixcore.com/services/n8n'
+  canonical: 'https://www.solvixcore.com/services/n8n'
 });
 
 export default function N8nService() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://solvixcore.com' },
-    { name: 'Services', url: 'https://solvixcore.com/services' },
-    { name: 'n8n Automation', url: 'https://solvixcore.com/services/n8n' }
+    { name: 'Home', url: 'https://www.solvixcore.com' },
+    { name: 'Services', url: 'https://www.solvixcore.com/services' },
+    { name: 'n8n Automation', url: 'https://www.solvixcore.com/services/n8n' }
   ]);
 
   const serviceSchema = generateServiceSchema({
     name: 'n8n Workflow Automation Services',
     description: 'Professional n8n automation, workflow design, API integration, and business process automation for Canadian businesses',
-    url: 'https://solvixcore.com/services/n8n'
+    url: 'https://www.solvixcore.com/services/n8n'
   });
 
   const faqSchema = generateFAQSchema([

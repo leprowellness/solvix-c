@@ -18,20 +18,20 @@ export const metadata = genMeta({
     ...seoKeywords.canada.appDevelopment.semantic,
     ...seoKeywords.global.appDevelopment.semantic
   ],
-  canonical: 'https://solvixcore.com/services/app-dev'
+  canonical: 'https://www.solvixcore.com/services/app-dev'
 });
 
 export default function AppDevService() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://solvixcore.com' },
-    { name: 'Services', url: 'https://solvixcore.com/services' },
-    { name: 'App Development', url: 'https://solvixcore.com/services/app-dev' }
+    { name: 'Home', url: 'https://www.solvixcore.com' },
+    { name: 'Services', url: 'https://www.solvixcore.com/services' },
+    { name: 'App Development', url: 'https://www.solvixcore.com/services/app-dev' }
   ]);
 
   const serviceSchema = generateServiceSchema({
     name: 'Mobile App Development Services',
     description: 'Custom iOS, Android, and cross-platform mobile app development for businesses across Canada',
-    url: 'https://solvixcore.com/services/app-dev'
+    url: 'https://www.solvixcore.com/services/app-dev'
   });
 
   const faqSchema = generateFAQSchema([

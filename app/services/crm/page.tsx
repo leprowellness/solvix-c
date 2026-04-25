@@ -23,20 +23,20 @@ export const metadata = genMeta({
     'customer management system',
     'crm consulting services'
   ],
-  canonical: 'https://solvixcore.com/services/crm'
+  canonical: 'https://www.solvixcore.com/services/crm'
 });
 
 export default function CRMService() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://solvixcore.com' },
-    { name: 'Services', url: 'https://solvixcore.com/services' },
-    { name: 'CRM Development', url: 'https://solvixcore.com/services/crm' }
+    { name: 'Home', url: 'https://www.solvixcore.com' },
+    { name: 'Services', url: 'https://www.solvixcore.com/services' },
+    { name: 'CRM Development', url: 'https://www.solvixcore.com/services/crm' }
   ]);
 
   const serviceSchema = generateServiceSchema({
     name: 'Custom CRM Development & Automation Services',
     description: 'Professional custom CRM development, sales automation, customer management systems, and CRM integration for Canadian businesses',
-    url: 'https://solvixcore.com/services/crm'
+    url: 'https://www.solvixcore.com/services/crm'
   });
 
   const faqSchema = generateFAQSchema([

@@ -30,30 +30,30 @@ export const metadata = genMeta({
     'digital transformation services',
     'enterprise software development'
   ],
-  canonical: 'https://solvixcore.com'
+  canonical: 'https://www.solvixcore.com'
 });
 
 export default function Home() {
   // Structured data for homepage
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://solvixcore.com' }
+    { name: 'Home', url: 'https://www.solvixcore.com' }
   ]);
 
   const servicesOffered = [
     {
       name: 'AI Automation Services',
       description: 'Custom AI implementations and intelligent automation solutions',
-      url: 'https://solvixcore.com/services/ai-solutions'
+      url: 'https://www.solvixcore.com/services/ai-solutions'
     },
     {
       name: 'Web Development Services',
       description: 'Custom websites and web applications built with Next.js',
-      url: 'https://solvixcore.com/services/web-development'
+      url: 'https://www.solvixcore.com/services/web-development'
     },
     {
       name: 'SEO & Digital Marketing',
       description: 'Data-driven marketing strategies and search optimization',
-      url: 'https://solvixcore.com/services/marketing-seo'
+      url: 'https://www.solvixcore.com/services/marketing-seo'
     }
   ];
 

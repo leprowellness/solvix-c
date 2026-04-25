@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/', '/_next/'],
       },
     ],
-    sitemap: 'https://solvixcore.com/sitemap.xml',
+    sitemap: 'https://www.solvixcore.com/sitemap.xml',
   };
 }

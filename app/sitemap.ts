@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://solvixcore.com';
+  const baseUrl = 'https://www.solvixcore.com';
   const currentDate = new Date();
 
   return [
@@ -79,6 +79,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/services/shopify`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/services/pos`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,

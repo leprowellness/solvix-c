@@ -18,14 +18,14 @@ export const metadata = genMeta({
     ...seoKeywords.canada.contentCreation.semantic,
     ...seoKeywords.global.contentCreation.semantic
   ],
-  canonical: 'https://solvixcore.com/services/content'
+  canonical: 'https://www.solvixcore.com/services/content'
 });
 
 export default function ContentService() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://solvixcore.com' },
-    { name: 'Services', url: 'https://solvixcore.com/services' },
-    { name: 'Content Creation', url: 'https://solvixcore.com/services/content' }
+    { name: 'Home', url: 'https://www.solvixcore.com' },
+    { name: 'Services', url: 'https://www.solvixcore.com/services' },
+    { name: 'Content Creation', url: 'https://www.solvixcore.com/services/content' }
   ]);
 
   const serviceSchema = generateServiceSchema({

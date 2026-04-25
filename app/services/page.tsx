@@ -19,7 +19,7 @@ export const metadata = genMeta({
     'tech agency canada',
     'software development services'
   ],
-  canonical: 'https://solvixcore.com/services'
+  canonical: 'https://www.solvixcore.com/services'
 });
 
 const AllServices = [
@@ -107,8 +107,8 @@ const AllServices = [
 
 export default function Services() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://solvixcore.com' },
-    { name: 'Services', url: 'https://solvixcore.com/services' }
+    { name: 'Home', url: 'https://www.solvixcore.com' },
+    { name: 'Services', url: 'https://www.solvixcore.com/services' }
   ]);
 
   return (

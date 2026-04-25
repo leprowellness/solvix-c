@@ -19,20 +19,20 @@ export const metadata = genMeta({
     ...seoKeywords.canada.seoMarketing.semantic,
     ...seoKeywords.global.seoMarketing.semantic
   ],
-  canonical: 'https://solvixcore.com/services/marketing-seo'
+  canonical: 'https://www.solvixcore.com/services/marketing-seo'
 });
 
 export default function MarketingSEOService() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://solvixcore.com' },
-    { name: 'Services', url: 'https://solvixcore.com/services' },
-    { name: 'Marketing & SEO', url: 'https://solvixcore.com/services/marketing-seo' }
+    { name: 'Home', url: 'https://www.solvixcore.com' },
+    { name: 'Services', url: 'https://www.solvixcore.com/services' },
+    { name: 'Marketing & SEO', url: 'https://www.solvixcore.com/services/marketing-seo' }
   ]);
 
   const serviceSchema = generateServiceSchema({
     name: 'SEO & Digital Marketing Services',
     description: 'Professional SEO services, local SEO, technical SEO optimization, digital marketing strategies, and content marketing for Canadian businesses',
-    url: 'https://solvixcore.com/services/marketing-seo'
+    url: 'https://www.solvixcore.com/services/marketing-seo'
   });
 
   const faqSchema = generateFAQSchema([

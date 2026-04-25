@@ -18,20 +18,20 @@ export const metadata = genMeta({
     ...seoKeywords.canada.webDevelopment.semantic,
     ...seoKeywords.global.webDevelopment.semantic
   ],
-  canonical: 'https://solvixcore.com/services/web-development'
+  canonical: 'https://www.solvixcore.com/services/web-development'
 });
 
 export default function WebDevService() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://solvixcore.com' },
-    { name: 'Services', url: 'https://solvixcore.com/services' },
-    { name: 'Web Development', url: 'https://solvixcore.com/services/web-development' }
+    { name: 'Home', url: 'https://www.solvixcore.com' },
+    { name: 'Services', url: 'https://www.solvixcore.com/services' },
+    { name: 'Web Development', url: 'https://www.solvixcore.com/services/web-development' }
   ]);
 
   const serviceSchema = generateServiceSchema({
     name: 'Custom Web Development Services',
     description: 'Professional custom website development, Next.js applications, ecommerce platforms, and progressive web apps for businesses across Canada',
-    url: 'https://solvixcore.com/services/web-development'
+    url: 'https://www.solvixcore.com/services/web-development'
   });
 
   const faqSchema = generateFAQSchema([

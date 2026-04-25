@@ -18,20 +18,20 @@ export const metadata = genMeta({
     ...seoKeywords.canada.langchain.semantic,
     ...seoKeywords.global.langchain.semantic
   ],
-  canonical: 'https://solvixcore.com/services/langchain'
+  canonical: 'https://www.solvixcore.com/services/langchain'
 });
 
 export default function LangChainService() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://solvixcore.com' },
-    { name: 'Services', url: 'https://solvixcore.com/services' },
-    { name: 'LangChain Integration', url: 'https://solvixcore.com/services/langchain' }
+    { name: 'Home', url: 'https://www.solvixcore.com' },
+    { name: 'Services', url: 'https://www.solvixcore.com/services' },
+    { name: 'LangChain Integration', url: 'https://www.solvixcore.com/services/langchain' }
   ]);
 
   const serviceSchema = generateServiceSchema({
     name: 'LangChain Development & Integration Services',
     description: 'Professional LangChain development, LLM application development, AI chatbots, and RAG systems for Canadian businesses',
-    url: 'https://solvixcore.com/services/langchain'
+    url: 'https://www.solvixcore.com/services/langchain'
   });
 
   const faqSchema = generateFAQSchema([

@@ -18,20 +18,20 @@ export const metadata = genMeta({
     ...seoKeywords.canada.aiAutomation.semantic,
     ...seoKeywords.global.aiAutomation.semantic
   ],
-  canonical: 'https://solvixcore.com/services/ai-solutions'
+  canonical: 'https://www.solvixcore.com/services/ai-solutions'
 });
 
 export default function AISolutionsService() {
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: 'https://solvixcore.com' },
-    { name: 'Services', url: 'https://solvixcore.com/services' },
-    { name: 'AI Solutions', url: 'https://solvixcore.com/services/ai-solutions' }
+    { name: 'Home', url: 'https://www.solvixcore.com' },
+    { name: 'Services', url: 'https://www.solvixcore.com/services' },
+    { name: 'AI Solutions', url: 'https://www.solvixcore.com/services/ai-solutions' }
   ]);
 
   const serviceSchema = generateServiceSchema({
     name: 'AI Automation & Machine Learning Services',
     description: 'Custom AI automation services, machine learning solutions, predictive analytics, and intelligent business process automation for Canadian businesses',
-    url: 'https://solvixcore.com/services/ai-solutions'
+    url: 'https://www.solvixcore.com/services/ai-solutions'
   });
 
   const faqSchema = generateFAQSchema([

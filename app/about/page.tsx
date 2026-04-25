@@ -1,13 +1,28 @@
+import { generateMetadata as genMeta, generateOrganizationSchema, generateBreadcrumbSchema } from '@/lib/seo-utils';
+
+export const metadata = genMeta({
+  title: 'About Solvix Core | Leading Canadian Tech Agency | Web Development & AI Solutions',
+  description: 'About Solvix Core - Premier Canadian technology agency specializing in AI automation, web development, mobile apps, and digital solutions. Meet our team of expert developers and innovators.',
+  keywords: [
+    'about solvix core',
+    'canadian tech agency',
+    'web development company',
+    'ai automation company',
+    'tech company canada',
+    'software development agency',
+    'digital solutions provider',
+    'innovation in technology',
+    'canadian tech leaders',
+    'expert development team'
+  ],
+  canonical: 'https://www.solvixcore.com/about'
+});
+
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
 import Link from 'next/link';
 import { Target, Users, Award, Lightbulb, Heart, Zap, Shield, TrendingUp, CheckCircle, Rocket, Brain, Code } from 'lucide-react';
 import Image from 'next/image';
-
-export const metadata = {
-  title: 'About Us - Solvix Core',
-  description: 'Learn about Solvix Core - our mission, values, and the team behind innovative tech solutions.',
-};
 
 export default function About() {
   return (

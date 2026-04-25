@@ -16,7 +16,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://solvixcore.com'),
+  metadataBase: new URL('https://www.solvixcore.com'),
   title: {
     default: 'Solvix Core - AI Automation, Web Development & Digital Services Canada',
     template: '%s | Solvix Core'
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     'startup software development',
     'saas development services'
   ],
-  authors: [{ name: 'Solvix Core', url: 'https://solvixcore.com' }],
+  authors: [{ name: 'Solvix Core', url: 'https://www.solvixcore.com' }],
   creator: 'Solvix Core',
   publisher: 'Solvix Core',
   category: 'Technology',
@@ -77,18 +77,18 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://solvixcore.com',
+    canonical: 'https://www.solvixcore.com',
     languages: {
-      'en-CA': 'https://solvixcore.com',
-      'en-US': 'https://solvixcore.com/en-us',
-      'fr-CA': 'https://solvixcore.com/fr-ca',
+      'en-CA': 'https://www.solvixcore.com',
+      'en-US': 'https://www.solvixcore.com/en-us',
+      'fr-CA': 'https://www.solvixcore.com/fr-ca',
     },
   },
   openGraph: {
     type: 'website',
     locale: 'en_CA',
     alternateLocale: ['en_US', 'fr_CA'],
-    url: 'https://solvixcore.com',
+    url: 'https://www.solvixcore.com',
     siteName: 'Solvix Core',
     title: 'Solvix Core - AI Automation & Web Development Services Canada',
     description: 'Transform your business with AI automation, custom web development, and digital solutions. Trusted Canadian tech partner for startups and enterprises.',
