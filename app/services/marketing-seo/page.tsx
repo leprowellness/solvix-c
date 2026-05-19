@@ -10,9 +10,20 @@ import { generateMetadata as genMeta, generateServiceSchema, generateBreadcrumbS
 import { seoKeywords } from '@/lib/seo-keywords';
 
 export const metadata = genMeta({
-  title: 'SEO Services Canada | Digital Marketing Agency | Solvix Core',
-  description: 'Top-rated SEO agency in Canada. Local SEO services, technical SEO, digital marketing, content marketing, and search engine optimization for businesses across Toronto, Vancouver, Montreal & Canada.',
+  title: 'SEO & GEO Services Canada | AI Search Optimization | Digital Marketing | Solvix Core',
+  description: 'Top-rated SEO and GEO (Generative Engine Optimization) agency in Canada. Local SEO, technical SEO, AI search optimization, digital marketing, and content marketing for businesses across Canada.',
   keywords: [
+    // 2026 Trending SEO/GEO Keywords
+    'generative engine optimization canada',
+    'geo optimization canada',
+    'ai search optimization canada',
+    'llm seo services canada',
+    'chatgpt seo optimization canada',
+    'perplexity ai optimization canada',
+    'ai overview optimization canada',
+    'answer engine optimization canada',
+    'zero-click search optimization canada',
+    // Core SEO Keywords
     seoKeywords.canada.seoMarketing.primary,
     ...seoKeywords.canada.seoMarketing.secondary,
     ...seoKeywords.global.seoMarketing.secondary,

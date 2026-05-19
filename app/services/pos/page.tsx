@@ -4,20 +4,29 @@ import POSPricingSection from '@/components/pos-pricing-section';
 import { Store, BarChart3, Users, CreditCard, Package, Shield } from 'lucide-react';
 
 export const metadata = genMeta({
-  title: 'Point of Sale (POS) Solutions Canada | Retail & Hospitality Systems | Solvix Core',
-  description: 'Advanced POS systems for retail and hospitality businesses in Canada. Multi-store management, inventory tracking, payment processing, and customer analytics. Streamline operations with our POS solutions.',
+  title: 'Point of Sale (POS) Solutions Canada | AI-Powered Retail & Restaurant POS | Solvix Core',
+  description: 'Custom AI-powered POS systems for retail, restaurant and hospitality businesses in Canada. Cloud-based POS, inventory management, payment processing, multi-store management, and real-time analytics.',
   keywords: [
     'pos system canada',
-    'point of sale software',
-    'retail pos system',
+    'point of sale software canada',
+    'retail pos system canada',
+    'restaurant pos system canada',
+    'cloud pos system',
+    'ai powered pos system canada',
     'hospitality pos solution',
-    'pos software canada',
-    'multi-store pos system',
-    'payment processing pos',
-    'inventory management pos',
-    'restaurant pos system',
-    'retail management software',
-    'pos system development'
+    'pos software development canada',
+    'multi-store pos management',
+    'payment processing pos canada',
+    'inventory management system canada',
+    'retail management software canada',
+    'pos system development',
+    'custom pos solution',
+    'ipad pos system canada',
+    'pos integration services',
+    'small business pos canada',
+    'enterprise pos system',
+    'pos analytics dashboard',
+    'smart pos system 2026',
   ],
   canonical: 'https://www.solvixcore.com/services/pos'
 });

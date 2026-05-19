@@ -9,19 +9,30 @@ import { generateMetadata as genMeta, generateServiceSchema, generateBreadcrumbS
 import { seoKeywords } from '@/lib/seo-keywords';
 
 export const metadata = genMeta({
-  title: 'Custom CRM Development Canada | CRM Solutions & Automation | Solvix Core',
-  description: 'Professional custom CRM development in Canada. Tailored CRM solutions, sales automation, customer management systems, and CRM integration services. Build the perfect CRM for your business.',
+  title: 'Custom CRM Development Canada | AI-Powered CRM & Sales Automation | Solvix Core',
+  description: 'Custom CRM development and AI-powered automation in Canada. Tailored CRM systems, HubSpot/Salesforce customization, sales pipeline automation, customer management, and CRM integration. Boost sales with smart CRM.',
   keywords: [
-    seoKeywords.canada.crmAutomation.primary,
-    ...seoKeywords.canada.crmAutomation.secondary,
-    ...seoKeywords.global.crmAutomation.secondary,
-    ...seoKeywords.canada.crmAutomation.semantic,
-    ...seoKeywords.global.crmAutomation.semantic,
-    'custom crm development',
-    'crm software development',
-    'sales crm solutions',
-    'customer management system',
-    'crm consulting services'
+    'custom crm development canada',
+    'ai powered crm canada',
+    'crm automation services canada',
+    'crm solutions canada',
+    'sales crm software canada',
+    'crm integration services canada',
+    'hubspot customization canada',
+    'salesforce development canada',
+    'crm consulting canada',
+    'sales automation canada',
+    'customer relationship management canada',
+    'crm implementation canada',
+    'business crm solutions canada',
+    'crm migration services',
+    'zoho crm development canada',
+    'crm dashboard development',
+    'lead management system canada',
+    'sales pipeline automation canada',
+    'crm api integration canada',
+    'ai crm automation 2026',
+    'agentic crm canada',
   ],
   canonical: 'https://www.solvixcore.com/services/crm'
 });

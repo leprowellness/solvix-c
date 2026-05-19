@@ -9,17 +9,32 @@ import { generateMetadata as genMeta, generateServiceSchema, generateBreadcrumbS
 import { seoKeywords } from '@/lib/seo-keywords';
 
 export const metadata = genMeta({
-  title: 'OpenAI Agent SDK Development Canada | Custom GPT Chatbots | Solvix Core',
-  description: 'Expert OpenAI Agent SDK development in Canada. Custom GPT chatbots, autonomous AI agents, intelligent automation, and OpenAI API integration. Build next-gen AI solutions.',
+  title: 'OpenAI Agent SDK & Agentic AI Development Canada | GPT-4o | Solvix Core',
+  description: 'Expert OpenAI Agent SDK and agentic AI development in Canada. Custom AI agents, multi-agent systems, autonomous workflows, OpenAI API integration, and intelligent automation. Build next-gen agentic AI solutions.',
   keywords: [
-    seoKeywords.canada.openai.primary,
-    ...seoKeywords.canada.openai.secondary,
-    ...seoKeywords.global.aiChatbots.secondary,
+    'openai development services canada',
     'openai agent sdk canada',
-    'gpt-4 development',
-    'openai api integration',
-    'autonomous ai agents',
-    'custom gpt solutions canada'
+    'agentic ai development canada',
+    'gpt-4o development canada',
+    'custom ai agents canada',
+    'multi-agent systems canada',
+    'openai api integration canada',
+    'autonomous ai agents canada',
+    'ai agent orchestration canada',
+    'ai assistant development canada',
+    'openai consulting canada',
+    'gpt chatbot development canada',
+    'ai workflow automation canada',
+    'openai function calling',
+    'ai copilot development',
+    'custom gpt solutions canada',
+    'openai fine-tuning services',
+    'ai agent framework canada',
+    'llm application development canada',
+    'generative ai development canada',
+    'openai mcp integration canada',
+    'context engineering canada',
+    'ai reasoning models canada',
   ],
   canonical: 'https://www.solvixcore.com/services/openai'
 });

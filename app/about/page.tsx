@@ -1,22 +1,55 @@
 import { generateMetadata as genMeta, generateOrganizationSchema, generateBreadcrumbSchema } from '@/lib/seo-utils';
 
 export const metadata = genMeta({
-  title: 'About Solvix Core | Leading Canadian Tech Agency | Web Development & AI Solutions',
-  description: 'About Solvix Core - Premier Canadian technology agency specializing in AI automation, web development, mobile apps, and digital solutions. Meet our team of expert developers and innovators.',
+  title: 'About Solvix Core | Leading Canadian AI Agents & Tech Agency | Ottawa',
+  description: 'About Solvix Core - Premier Canadian technology agency specializing in agentic AI development, AI automation, web development, mobile apps, and digital solutions. Based in Ottawa, serving businesses across Canada and globally.',
   keywords: [
     'about solvix core',
     'canadian tech agency',
-    'web development company',
-    'ai automation company',
-    'tech company canada',
-    'software development agency',
-    'digital solutions provider',
-    'innovation in technology',
+    'web development company canada',
+    'agentic ai company canada',
+    'ai agents development company canada',
+    'ai automation company canada',
+    'tech company ottawa canada',
+    'software development agency canada',
+    'digital solutions provider canada',
+    'innovation technology canada',
     'canadian tech leaders',
-    'expert development team'
+    'expert development team canada',
+    'solvix core ottawa',
+    'technology company ottawa ontario',
+    'best tech agency canada',
+    'trusted software company canada',
+    'ai development company canada',
+    'multi-agent ai company canada',
+    'full stack development agency',
+    'startup technology partner canada',
+    'enterprise software solutions canada',
+    'generative ai company canada',
+    'rag development company canada',
   ],
   canonical: 'https://www.solvixcore.com/about'
 });
+
+// VideoObject schema to fix Google Search Console video indexing issue
+const videoSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: 'About Solvix Core - Canadian Tech Agency',
+  description: 'Learn about Solvix Core, a leading Canadian technology agency specializing in AI automation, web development, and digital solutions.',
+  thumbnailUrl: 'https://www.solvixcore.com/favicon/Solvix.PNG',
+  uploadDate: '2024-01-01T00:00:00+00:00',
+  contentUrl: 'https://www.solvixcore.com/Videos/About%20Section.mp4',
+  embedUrl: 'https://www.solvixcore.com/about',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Solvix Core',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://www.solvixcore.com/logo/logo.PNG'
+    }
+  }
+};
 
 import Navbar from '@/components/navbar';
 import Footer from '@/components/footer';
@@ -25,8 +58,21 @@ import { Target, Users, Award, Lightbulb, Heart, Zap, Shield, TrendingUp, CheckC
 import Image from 'next/image';
 
 export default function About() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: 'https://www.solvixcore.com' },
+    { name: 'About', url: 'https://www.solvixcore.com/about' }
+  ]);
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navbar />
 
       {/* Hero Section */}

@@ -9,14 +9,30 @@ import { generateMetadata as genMeta, generateServiceSchema, generateBreadcrumbS
 import { seoKeywords } from '@/lib/seo-keywords';
 
 export const metadata = genMeta({
-  title: 'Content Creation Services Canada | SEO Content Writing | Solvix Core',
-  description: 'Professional content creation services in Canada. SEO content writing, blog writing, copywriting, video content, and social media content. Strategic content marketing for Canadian businesses.',
+  title: 'Content Creation & AI-Assisted Video Editing Services Canada | Solvix Core',
+  description: 'Professional content creation and video editing services in Canada. SEO blog writing, GEO-optimized content, social media, YouTube video editing, short-form reels, AI-assisted content, and brand storytelling.',
   keywords: [
-    seoKeywords.canada.contentCreation.primary,
-    ...seoKeywords.canada.contentCreation.secondary,
-    ...seoKeywords.global.contentCreation.secondary,
-    ...seoKeywords.canada.contentCreation.semantic,
-    ...seoKeywords.global.contentCreation.semantic
+    'content creation services canada',
+    'video editing services canada',
+    'seo content writing canada',
+    'geo optimized content canada',
+    'ai content creation canada',
+    'social media content canada',
+    'youtube video editing canada',
+    'short form video editing canada',
+    'reels editing canada',
+    'tiktok content creation canada',
+    'blog writing services canada',
+    'copywriting services canada',
+    'brand content strategy canada',
+    'content marketing agency canada',
+    'ugc content creation canada',
+    'podcast editing canada',
+    'video production canada',
+    'content writing agency canada',
+    'seo copywriting canada',
+    'ai assisted content writing 2026',
+    'llm optimized content canada',
   ],
   canonical: 'https://www.solvixcore.com/services/content'
 });

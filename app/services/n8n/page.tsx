@@ -9,17 +9,32 @@ import { generateMetadata as genMeta, generateServiceSchema, generateBreadcrumbS
 import { seoKeywords } from '@/lib/seo-keywords';
 
 export const metadata = genMeta({
-  title: 'n8n Automation Services Canada | Workflow Automation | Solvix Core',
-  description: 'Professional n8n automation services in Canada. Custom workflow automation, API integration, business process automation, and system integration. Streamline operations with n8n.',
+  title: 'n8n Automation Services Canada | AI Workflow Automation | Solvix Core',
+  description: 'Expert n8n workflow automation services in Canada. Custom n8n workflows, AI-powered automations, API integrations, business process automation, and system integrations. Automate your business with n8n in 2026.',
   keywords: [
-    seoKeywords.canada.crmAutomation.primary,
-    ...seoKeywords.canada.crmAutomation.secondary,
-    ...seoKeywords.global.crmAutomation.secondary,
     'n8n automation canada',
-    'workflow automation services',
-    'business process automation',
-    'api integration services',
-    'n8n consulting canada'
+    'n8n workflow automation',
+    'n8n ai automation canada',
+    'no-code automation canada',
+    'low-code automation canada',
+    'business process automation canada',
+    'workflow automation services canada',
+    'api integration services canada',
+    'n8n consulting canada',
+    'zapier alternative canada',
+    'make automation canada',
+    'automation agency canada',
+    'n8n development services',
+    'n8n self-hosted setup',
+    'n8n ai agent workflows',
+    'n8n langchain integration',
+    'n8n openai integration',
+    'agentic workflow automation canada',
+    'crm automation canada',
+    'email automation canada',
+    'slack automation integration',
+    'airtable automation canada',
+    'n8n mcp integration',
   ],
   canonical: 'https://www.solvixcore.com/services/n8n'
 });

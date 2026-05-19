@@ -9,9 +9,24 @@ import { generateMetadata as genMeta, generateServiceSchema, generateBreadcrumbS
 import { seoKeywords } from '@/lib/seo-keywords';
 
 export const metadata = genMeta({
-  title: 'AI Automation Services Canada | Custom AI Development | Solvix Core',
-  description: 'Leading AI automation services in Canada. Custom AI development, machine learning solutions, business process automation, and AI integration. Transform your business with intelligent automation.',
+  title: 'Agentic AI & AI Automation Services Canada | Custom AI Agents | Solvix Core',
+  description: 'Leading agentic AI and AI automation services in Canada. Custom AI agents, multi-agent systems, RAG pipelines, LangChain development, and intelligent business automation. Transform your business with autonomous AI.',
   keywords: [
+    // 2026 Trending AI Keywords
+    'agentic ai development canada',
+    'ai agents for business canada',
+    'multi-agent ai systems canada',
+    'autonomous ai systems canada',
+    'ai agent orchestration canada',
+    'context engineering canada',
+    'rag pipeline development canada',
+    'retrieval augmented generation canada',
+    'ai reasoning models canada',
+    'multimodal ai development canada',
+    'ai voice agents canada',
+    'openai agents sdk canada',
+    'model context protocol mcp canada',
+    // Core AI keywords
     seoKeywords.canada.aiAutomation.primary,
     ...seoKeywords.canada.aiAutomation.secondary,
     ...seoKeywords.global.aiAutomation.secondary,

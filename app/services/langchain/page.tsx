@@ -9,14 +9,32 @@ import { generateMetadata as genMeta, generateServiceSchema, generateBreadcrumbS
 import { seoKeywords } from '@/lib/seo-keywords';
 
 export const metadata = genMeta({
-  title: 'LangChain Development Services Canada | LLM Application Development | Solvix Core',
-  description: 'Expert LangChain development services in Canada. Custom LLM applications, AI chatbot development, RAG systems, and conversational AI solutions. Build intelligent AI agents with LangChain.',
+  title: 'LangChain & AI Agent Development Canada | RAG, LangGraph & LLMs | Solvix Core',
+  description: 'Expert LangChain and AI agent development in Canada. Custom RAG systems, LangGraph workflows, multi-agent pipelines, LLM applications, and vector databases. Build production-ready agentic AI with LangChain.',
   keywords: [
-    seoKeywords.canada.langchain.primary,
-    ...seoKeywords.canada.langchain.secondary,
-    ...seoKeywords.global.langchain.secondary,
-    ...seoKeywords.canada.langchain.semantic,
-    ...seoKeywords.global.langchain.semantic
+    'langchain development canada',
+    'langchain developers canada',
+    'langgraph development canada',
+    'ai agent development canada',
+    'multi-agent pipeline canada',
+    'rag system development canada',
+    'retrieval augmented generation canada',
+    'llm application development canada',
+    'ai chatbot development canada',
+    'vector database integration canada',
+    'langchain consulting canada',
+    'conversational ai development canada',
+    'langchain rag pipeline',
+    'openai langchain integration',
+    'pinecone weaviate development',
+    'langchain production deployment',
+    'custom llm solutions canada',
+    'langchain enterprise canada',
+    'ai knowledge base development',
+    'agentic ai langchain canada',
+    'context engineering langchain',
+    'langchain mcp integration',
+    'semantic search development canada',
   ],
   canonical: 'https://www.solvixcore.com/services/langchain'
 });

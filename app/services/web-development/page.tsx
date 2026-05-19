@@ -9,9 +9,15 @@ import { generateMetadata as genMeta, generateServiceSchema, generateBreadcrumbS
 import { seoKeywords } from '@/lib/seo-keywords';
 
 export const metadata = genMeta({
-  title: 'Web Development Services Canada | Custom Website Development | Solvix Core',
-  description: 'Professional web development company in Canada. Custom website development, Next.js applications, ecommerce solutions, and progressive web apps. Serving Toronto, Vancouver, Montreal & across Canada.',
+  title: 'Web Development Services Canada | Next.js & AI-Integrated Websites | Solvix Core',
+  description: 'Professional web development company in Canada. Custom website development, Next.js applications, AI-integrated web apps, ecommerce solutions, and progressive web apps. Serving Toronto, Vancouver, Montreal & across Canada.',
   keywords: [
+    // 2026 Trending Web Dev Keywords
+    'ai integrated web development canada',
+    'ai powered website canada',
+    'next.js ai web development canada',
+    'vibe coding web development canada',
+    // Core Web Dev Keywords
     seoKeywords.canada.webDevelopment.primary,
     ...seoKeywords.canada.webDevelopment.secondary,
     ...seoKeywords.global.webDevelopment.secondary,

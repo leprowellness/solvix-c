@@ -8,19 +8,29 @@ import Image from 'next/image';
 import { generateMetadata as genMeta, generateServiceSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo-utils';
 
 export const metadata = genMeta({
-  title: 'Shopify Store Development Canada | E-commerce Design | Solvix Core',
-  description: 'Professional Shopify store development in Canada. Custom Shopify design, theme customization, e-commerce setup, and store optimization. Launch your online store with expert Shopify developers.',
+  title: 'Shopify Store Development Canada | AI-Powered Ecommerce | Solvix Core',
+  description: 'Expert Shopify store development in Canada. Custom Shopify themes, Shopify Plus development, AI-powered ecommerce, app integration, store migration, and conversion optimization. Certified Shopify developers.',
   keywords: [
     'shopify development canada',
-    'shopify store design',
-    'ecommerce website development',
-    'shopify theme customization',
+    'shopify store design canada',
     'shopify experts canada',
-    'online store development',
-    'shopify plus development',
+    'shopify plus development canada',
+    'ecommerce website development canada',
+    'shopify theme customization',
+    'shopify app development',
+    'shopify store migration',
+    'shopify seo optimization',
+    'online store development canada',
     'custom shopify solutions',
-    'shopify app integration',
-    'ecommerce optimization'
+    'shopify headless commerce',
+    'shopify b2b development',
+    'shopify conversion optimization',
+    'ecommerce development agency canada',
+    'shopify dropshipping setup',
+    'shopify store setup canada',
+    'ai powered ecommerce canada',
+    'shopify ai integration canada',
+    'shopify automation canada 2026',
   ],
   canonical: 'https://www.solvixcore.com/services/shopify'
 });

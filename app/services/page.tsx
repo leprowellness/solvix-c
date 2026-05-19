@@ -8,16 +8,36 @@ import { generateMetadata as genMeta, generateBreadcrumbSchema } from '@/lib/seo
 import { seoKeywords } from '@/lib/seo-keywords';
 
 export const metadata = genMeta({
-  title: 'Our Services | AI, Web Development & Digital Solutions Canada | Solvix Core',
-  description: 'Comprehensive technology services in Canada: AI automation, web development, mobile apps, LangChain, SEO, content creation, and digital solutions. Expert tech services for businesses across Canada.',
+  title: 'Our Services | Agentic AI, Web Dev & Digital Solutions Canada | Solvix Core',
+  description: 'Full-service tech agency in Canada: agentic AI development, AI automation, web development, mobile apps, LangChain, n8n workflows, Shopify, SEO & GEO optimization, CRM, POS systems, and content creation.',
   keywords: [
-    ...seoKeywords.canada.aiAutomation.secondary.slice(0, 3),
-    ...seoKeywords.canada.webDevelopment.secondary.slice(0, 3),
-    ...seoKeywords.canada.seoMarketing.secondary.slice(0, 3),
+    // 2026 Trending Service Keywords
+    'agentic ai services canada',
+    'ai agents development canada',
+    'multi-agent systems canada',
+    'ai automation services canada',
+    'generative engine optimization canada',
+    'geo optimization canada',
+    // Core Service Keywords
+    'web development services canada',
+    'mobile app development canada',
+    'langchain development canada',
+    'n8n automation canada',
+    'shopify development canada',
+    'seo services canada',
+    'crm development canada',
+    'pos system canada',
+    'content creation canada',
+    'video editing canada',
     'technology services canada',
-    'digital solutions provider',
+    'digital solutions provider canada',
     'tech agency canada',
-    'software development services'
+    'software development services canada',
+    'full service digital agency canada',
+    'ai solutions for small business canada',
+    'startup tech services canada',
+    'enterprise software canada',
+    'digital transformation agency canada',
   ],
   canonical: 'https://www.solvixcore.com/services'
 });

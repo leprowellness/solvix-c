@@ -9,9 +9,14 @@ import { generateMetadata as genMeta, generateServiceSchema, generateBreadcrumbS
 import { seoKeywords } from '@/lib/seo-keywords';
 
 export const metadata = genMeta({
-  title: 'Mobile App Development Canada | iOS & Android Apps | Solvix Core',
-  description: 'Professional mobile app development company in Canada. Custom iOS, Android, and cross-platform app development. Native and hybrid mobile solutions for startups and enterprises across Canada.',
+  title: 'Mobile App Development Canada | AI-Powered iOS & Android Apps | Solvix Core',
+  description: 'Professional mobile app development company in Canada. Custom iOS, Android, and cross-platform app development with AI integration. Native and hybrid mobile solutions for startups and enterprises across Canada.',
   keywords: [
+    // 2026 Trending App Keywords
+    'ai powered app development canada',
+    'ai mobile app development canada',
+    'ai integrated app canada',
+    // Core App Keywords
     seoKeywords.canada.appDevelopment.primary,
     ...seoKeywords.canada.appDevelopment.secondary,
     ...seoKeywords.global.appDevelopment.secondary,

@@ -1,5 +1,5 @@
 // SEO Keywords Database - Global + Canada Focus with Premium Keywords
-// Updated: 2025 - Optimized for Canadian search rankings
+// Updated: 2026 - Optimized for Canadian search rankings + 2026 AI/Tech Trends
 
 export const seoKeywords = {
   global: {
@@ -148,13 +148,19 @@ export const seoKeywords = {
     aiAutomation: {
       primary: 'ai automation services',
       secondary: [
+        'agentic ai development services',
+        'ai agents for business automation',
+        'multi-agent ai systems',
         'business process automation ai',
         'ai solutions for businesses',
         'ai workflow automation',
         'custom ai development',
         'machine learning solutions',
         'ai consulting services',
-        'intelligent automation platform'
+        'intelligent automation platform',
+        'ai agent orchestration',
+        'autonomous ai systems',
+        'ai-powered business automation 2026'
       ],
       semantic: [
         'artificial intelligence consulting',
@@ -166,7 +172,15 @@ export const seoKeywords = {
         'predictive analytics ai',
         'ai chatbot development',
         'ai strategy consulting',
-        'ai business solutions'
+        'ai business solutions',
+        'generative ai for business',
+        'retrieval augmented generation rag',
+        'ai agent frameworks',
+        'model context protocol mcp',
+        'context engineering services',
+        'agentic engineering solutions',
+        'ai reasoning models',
+        'multimodal ai development'
       ]
     },
     langchain: {
@@ -177,7 +191,11 @@ export const seoKeywords = {
         'ai chatbot development',
         'custom gpt chatbot development',
         'langchain integration',
-        'large language model development'
+        'large language model development',
+        'langchain agent development',
+        'rag pipeline development',
+        'llm orchestration services',
+        'ai agent workflow langchain'
       ],
       semantic: [
         'large language model development',
@@ -187,7 +205,11 @@ export const seoKeywords = {
         'llm orchestration',
         'langchain implementation',
         'gpt integration services',
-        'ai application development'
+        'ai application development',
+        'vector database integration',
+        'semantic search development',
+        'langchain rag solutions',
+        'openai agents sdk development'
       ]
     },
     aiChatbots: {
@@ -198,7 +220,10 @@ export const seoKeywords = {
         'gpt chatbot development',
         'ai customer service automation',
         'intelligent chatbot solutions',
-        'conversational chatbot'
+        'conversational chatbot',
+        'ai voice agent development',
+        'ai phone agent services',
+        'autonomous ai assistant'
       ],
       semantic: [
         'conversational ai platform',
@@ -207,7 +232,10 @@ export const seoKeywords = {
         'automated customer support',
         'nlp chatbot development',
         'intelligent chat assistant',
-        'customer service chatbot'
+        'customer service chatbot',
+        'ai agent customer support',
+        'voice ai automation',
+        'ai receptionist services'
       ]
     },
     startupSaas: {
@@ -217,7 +245,10 @@ export const seoKeywords = {
         'mvp development services',
         'ai saas development',
         'startup tech consulting',
-        'scalable software solutions'
+        'scalable software solutions',
+        'ai-first product development',
+        'vibe coding services',
+        'agentic app development'
       ],
       semantic: [
         'minimum viable product',
@@ -226,7 +257,32 @@ export const seoKeywords = {
         'rapid prototyping services',
         'scalable saas solutions',
         'startup technology consulting',
-        'saas development company'
+        'saas development company',
+        'ai native application development',
+        'product led growth development'
+      ]
+    },
+    geo: {
+      primary: 'generative engine optimization services',
+      secondary: [
+        'geo optimization services',
+        'ai search optimization',
+        'chatgpt seo optimization',
+        'perplexity ai optimization',
+        'llm seo services',
+        'ai overview optimization',
+        'answer engine optimization',
+        'ai search visibility services'
+      ],
+      semantic: [
+        'generative ai search ranking',
+        'ai-powered search optimization',
+        'llm content optimization',
+        'ai search engine marketing',
+        'chatgpt visibility optimization',
+        'ai answer optimization',
+        'zero-click search optimization',
+        'ai featured snippet optimization'
       ]
     }
   },
@@ -370,11 +426,16 @@ export const seoKeywords = {
     aiAutomation: {
       primary: 'ai automation services canada',
       secondary: [
+        'agentic ai development canada',
+        'ai agents for business canada',
+        'multi-agent ai systems canada',
         'ai solutions for businesses canada',
         'ai development company canada',
         'canadian ai consulting',
         'ai implementation services canada',
-        'machine learning solutions canada'
+        'machine learning solutions canada',
+        'ai workflow automation canada',
+        'autonomous ai systems canada'
       ],
       semantic: [
         'artificial intelligence canada',
@@ -382,7 +443,13 @@ export const seoKeywords = {
         'toronto ai developers',
         'vancouver ai solutions',
         'canadian ai agency',
-        'ai services canada'
+        'ai services canada',
+        'generative ai canada',
+        'rag development canada',
+        'ai agent orchestration canada',
+        'context engineering canada',
+        'agentic engineering canada',
+        'llm development canada'
       ]
     },
     langchain: {
@@ -391,12 +458,19 @@ export const seoKeywords = {
         'langchain developers canada',
         'ai chatbot development canada',
         'openai integration canada',
-        'gpt development canada'
+        'gpt development canada',
+        'rag pipeline development canada',
+        'llm application development canada',
+        'ai agent development canada',
+        'langchain agent canada'
       ],
       semantic: [
         'langchain consulting canada',
         'ai development toronto',
-        'chatbot development canada'
+        'chatbot development canada',
+        'vector database canada',
+        'semantic search canada',
+        'openai agents sdk canada'
       ]
     },
     openai: {
@@ -440,13 +514,17 @@ export const seoKeywords = {
       'hire web developer canada',
       'hire mobile app developer',
       'hire ai developer canada',
+      'hire agentic ai developer canada',
       'best web development company canada',
       'top rated seo agency canada',
       'affordable web design canada',
       'web development cost canada',
       'custom software development company',
       'enterprise software solutions',
-      'digital transformation services canada'
+      'digital transformation services canada',
+      'hire ai agent developer canada',
+      'build ai agent canada',
+      'ai automation agency canada 2026'
     ],
     commercial: [
       'web design company near me',
@@ -456,7 +534,10 @@ export const seoKeywords = {
       'website builder services',
       'mobile app development cost',
       'web development services pricing',
-      'seo agency pricing'
+      'seo agency pricing',
+      'ai automation cost canada',
+      'geo optimization services canada',
+      'ai search optimization canada'
     ],
     informational: [
       'how to hire a web developer',
@@ -465,7 +546,15 @@ export const seoKeywords = {
       'ai implementation guide',
       'seo best practices',
       'digital marketing strategy',
-      'web design trends 2025'
+      'web design trends 2026',
+      'what is agentic ai',
+      'how to build ai agents',
+      'generative engine optimization guide',
+      'ai automation for small business canada',
+      'vibe coding vs agentic coding',
+      'context engineering explained',
+      'rag vs fine tuning ai',
+      'ai agents for business automation 2026'
     ]
   }
 };
