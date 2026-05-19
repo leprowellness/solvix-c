@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { generateMetadata as genMeta } from '@/lib/seo-utils';
 import ContactFormClient from './contact-form-client';
 
@@ -35,5 +36,9 @@ export const metadata = genMeta({
 });
 
 export default function Contact() {
-  return <ContactFormClient />;
+  return (
+    <Suspense fallback={null}>
+      <ContactFormClient />
+    </Suspense>
+  );
 }
