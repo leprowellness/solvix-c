@@ -33,7 +33,6 @@ const Navbar = () => {
     { label: 'Services', href: '/services' },
     { label: 'Portfolio', href: '/portfolio' },
     { label: 'About', href: '/about' },
-    { label: 'Pricing', href: '/pricing' },
   ];
 
   return (
@@ -132,7 +131,6 @@ const Navbar = () => {
               { label: 'About', href: '/about' },
               { label: 'Services', href: '/services' },
               { label: 'Portfolio', href: '/portfolio' },
-              { label: 'Prices', href: '/pricing' },
               { label: 'Contact', href: '/contact' }
             ].map((item, index, array) => (
               <div key={item.label}>

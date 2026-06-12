@@ -247,7 +247,7 @@ export default function POSPage() {
               Request a Demo
             </a>
             <a
-              href="/pricing"
+              href="/contact"
               className="inline-block bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 px-8 py-4 rounded-lg font-semibold transition-all duration-300"
             >
               View All Pricing

@@ -15,7 +15,7 @@ export function generateMetadata(config: SEOConfig): Metadata {
     title,
     description,
     keywords,
-    canonical = 'https://solvixcore.com',
+    canonical = 'https://www.solvixcore.com',
     ogImage = '/favicon/Solvix.PNG',
     noindex = false
   } = config;
@@ -63,20 +63,24 @@ export function generateOrganizationSchema() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Solvix Core',
-    url: 'https://solvixcore.com',
-    logo: 'https://solvixcore.com/logo/logo.PNG',
-    description: 'Premium technology solutions including AI, automation, web development, and digital services',
+    url: 'https://www.solvixcore.com',
+    logo: 'https://www.solvixcore.com/logo/logo.PNG',
+    description: 'Premium technology solutions including AI automation, web development, mobile apps, and digital services for businesses across Canada and globally.',
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'CA',
-      addressRegion: 'Canada'
+      streetAddress: 'Suite 104 - 2 Gurdwara Road',
+      addressLocality: 'Ottawa',
+      addressRegion: 'Ontario',
+      postalCode: 'K2E 1A2',
+      addressCountry: 'CA'
     },
     contactPoint: {
       '@type': 'ContactPoint',
+      telephone: '+1-437-889-8265',
       email: 'info@solvixcore.com',
       contactType: 'Customer Service',
-      areaServed: ['CA', 'US'],
-      availableLanguage: ['English', 'French']
+      areaServed: ['CA', 'US', 'GB', 'AU'],
+      availableLanguage: ['English']
     },
     sameAs: [
       'https://www.linkedin.com/company/solvixcore',
